@@ -2,7 +2,7 @@
     --background-color: #1e1e2e;
     --text-color:  #cdd6f4;
     --mantle-color: #181825;
-    --title-color: #fab387;
+    --title-color: #b4befe;
     --title-font-size: 32px;
     --link-color: #89b4fa;
     --font-family: 'Inter', sans-serif;
@@ -51,7 +51,7 @@ a {
     color: var(--title-color);
     text-decoration: none;
     font-size: var(--title-font-size);
-    font-weight: bold;
+    font-weight: semi-bold;
 }
 
 
