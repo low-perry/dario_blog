@@ -135,12 +135,21 @@ footer {
     justify-content: space-between;
     align-items: center;
 }
+.hero-text, .hero-logo {
+    margin-top: 50px;
+    width: 50%;
+}
+.hero-logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 
-.hero-text p {
+.hero-text p.hero-hello {
     background: linear-gradient(to right, #f5e0dc, #cba6f7);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    font-size: 72px;
+    font-size: 50px;
     font-weight: bold;
 }
 
@@ -171,7 +180,7 @@ footer {
 @media (max-width: 768px) {
     .navbar-links {
         position: fixed;
-        top: 60px; /* Adjust based on your header height */
+        top: 60px;
         left: 0;
         right: 0;
         background-color: var(--mantle-color);
@@ -214,5 +223,13 @@ footer {
 
     .hero-container {
         flex-direction: column;
+    }
+
+    .hero-text p.hero-hello {
+        font-size: 30px;
+    }
+
+    .dropdown-active {
+        margin-top: 100px; /* Increase margin-top when dropdown is active */
     }
 }
