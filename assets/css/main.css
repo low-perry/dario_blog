@@ -1,0 +1,150 @@
+:root {
+    --background-color: #1e1e2e;
+    --text-color:  #cdd6f4;
+    --mantle-color: #181825;
+    --title-color: #fab387;
+    --title-font-size: 32px;
+    --link-color: #89b4fa;
+}
+
+header {
+    background-color: var(--mantle-color);
+    padding: 10px 0;
+}
+
+html, body {
+    height: 100%;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+body {
+    background-color: var(--background-color);
+    color: var(--text-color);
+    flex: 1;
+}
+a {
+    color: var(--link-color);
+    text-decoration: none;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.navbar-brand a {
+    color: var(--title-color);
+    text-decoration: none;
+    font-size: var(--title-font-size);
+    font-weight: bold;
+}
+
+
+.navbar-links ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+.navbar-links ul li {
+    margin-left: 20px;
+}
+
+.navbar-links ul li a {
+    color: #f2cdcd;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+.navbar-links ul li a:hover {
+    text-decoration: underline;
+}
+
+.navbar-toggle {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.navbar-toggle span {
+    background-color: #f5e0dc;
+    height: 3px;
+    margin: 4px 0;
+    width: 25px;
+}
+
+main {
+    flex: 1;
+}
+
+footer {
+    background-color: var(--mantle-color);
+    padding: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.footer-section {
+    flex: 1;
+    margin: 10px;
+    min-width: 200px;
+}
+
+.footer-section h3 {
+    margin-bottom: 10px;
+}
+
+.footer-section ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+    .navbar-links {
+        position: fixed;
+        top: 60px; /* Adjust based on your header height */
+        left: 0;
+        right: 0;
+        background-color: var(--mantle-color);
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        z-index: 1000;
+    }
+
+    .navbar-links ul {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .navbar-links ul li {
+        margin: 10px 0;
+        text-align: center;
+    }
+
+    .navbar-toggle {
+        display: flex;
+    }
+
+    .navbar-links.active {
+        display: flex;
+    }
+    footer {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .footer-section {
+        margin: 10px 0;
+        text-align: center;
+    }
+}

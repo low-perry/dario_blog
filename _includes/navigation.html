@@ -1,0 +1,19 @@
+<nav class="navbar">
+    <div class="navbar-brand">
+        <a href="{{ site.baseurl }}/">{{site.title}}</a>
+    </div>
+    <div class="navbar-toggle" id="navbar-toggle">
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+    <div class="navbar-links" id="navbar-links">
+        <ul>
+            {% for page in site.pages %}
+                {% if page.title %}
+                    <li><a href="{{ page.url | relative_url }}">{{ page.title }}</a></li>
+                {% endif %}
+            {% endfor %}
+        </ul>
+    </div>
+</nav>
