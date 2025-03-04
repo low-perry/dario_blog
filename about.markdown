@@ -1,12 +1,13 @@
 ---
 layout: page
 title: Me
-permalink: /moreaboutme/
+permalink: /me/
 ---
 
 My name is Dario.
 
 ## Favorite activities
+
 - running
 - reading
 - playing chess
@@ -14,6 +15,7 @@ My name is Dario.
 - hiking
 
 ## other favorites
+
 - color : <span style="color: orange;">orange</span>
 - food: <span>🍝</span>
 - books:
