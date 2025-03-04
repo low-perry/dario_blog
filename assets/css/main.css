@@ -34,12 +34,17 @@ a {
 }
 
 .navbar {
+    position: fixed; /* Make the navbar sticky */
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: var(--mantle-color);
     display: flex;
     justify-content: space-between;
     align-items: center;
-    max-width: 1200px;
-    margin: 0 auto;
+    margin: 0 0;
     padding: 0 20px;
+    z-index: 1000; /* Ensure the navbar is above other content */
 }
 
 .navbar-brand a {
