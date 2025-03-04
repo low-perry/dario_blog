@@ -5,6 +5,7 @@
     --title-color: #fab387;
     --title-font-size: 32px;
     --link-color: #89b4fa;
+    --font-family: 'Inter', sans-serif;
 }
 
 header {
@@ -22,6 +23,7 @@ html, body {
 body {
     background-color: var(--background-color);
     color: var(--text-color);
+    font-family: var(--font-family);
     flex: 1;
 }
 a {
@@ -60,7 +62,8 @@ a {
 .navbar-links ul li a {
     color: #f2cdcd;
     text-decoration: none;
-    font-size: 16px;
+    font-weight: semi-bold;
+    font-size: 20px;
 }
 
 .navbar-links ul li a:hover {
