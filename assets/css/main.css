@@ -6,6 +6,8 @@
     --title-font-size: 32px;
     --link-color: #89b4fa;
     --font-family: 'Inter', sans-serif;
+    --main-padding: 20px;
+    --main-margin: 20px;
 }
 
 header {
@@ -85,6 +87,8 @@ a {
 
 main {
     flex: 1;
+    padding: var(--main-padding);
+    margin: var(--main-margin);
 }
 
 footer {
@@ -109,6 +113,20 @@ footer {
     list-style-type: none;
     padding: 0;
 }
+
+.social-media {
+    list-style-type: none;
+    padding: 0;
+    display: flex;
+}
+
+.social-media li {
+    margin: 0 10px 0 0;
+}
+
+
+
+
 
 /* Responsive styles */
 @media (max-width: 768px) {
@@ -149,5 +167,9 @@ footer {
     .footer-section {
         margin: 10px 0;
         text-align: center;
+    }
+    
+    .social-media {
+        justify-content: center;
     }
 }
