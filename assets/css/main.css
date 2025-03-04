@@ -129,6 +129,40 @@ footer {
     margin: 0 10px 0 0;
 }
 
+/* Hero section */
+.hero-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.hero-text p {
+    background: linear-gradient(to right, #f5e0dc, #cba6f7);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-size: 72px;
+    font-weight: bold;
+}
+
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.hero-logo img {
+    height: 250px;
+    width: auto;
+    transition: transform 0.5s ease-in-out;
+}
+
+.hero-logo img:hover {
+    animation: spin 2s linear infinite;
+}
+
 
 
 
@@ -176,5 +210,9 @@ footer {
     
     .social-media {
         justify-content: center;
+    }
+
+    .hero-container {
+        flex-direction: column;
     }
 }
