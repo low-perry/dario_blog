@@ -35,7 +35,7 @@ kramdown:
 
 **Step 4.** Go to [this github](https://github.com/brazacz/rouge-themes/tree/main) repository. Enter the css directory and copy the content of the theme that you like into your `syntax.css` file. If you would like to use my custom theme you can find it [here](https://github.com/low-perry/my-jekyll-syntax-highlighter-theme).
 
-Now you the code syntax highlighter should be fully functional.
+Now the code syntax highlighter should be fully functional.
 
 ## Tutorial on how to create your own syntax highlighter theme
 
