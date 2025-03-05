@@ -1,6 +1,6 @@
 ---
 layout: page
-title:  "How to enable syntax highlighter in Jekyll!"
+title:  "How to enable code syntax highlighter in Jekyll!"
 date:   2025-03-04 18:13:33 +0100
 categories: jekyll tutorial
 ---
