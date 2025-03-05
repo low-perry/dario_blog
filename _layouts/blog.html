@@ -8,10 +8,10 @@ layout: main
 
 <div class="posts">
     {% for post in site.posts %}
-        <div class="post">
+        <div class="post-card">
             <h2><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h2>
-            <p>{{ post.date | date: "%B %d, %Y" }}</p>
-            <p>{{ post.excerpt }}</p>
+            <p class="post-date">{{ post.date | date: "%B %d, %Y" }}</p>
+            <p class="post-excerpt">{{ post.excerpt }}</p>
         </div>
     {% endfor %}
 </div>
