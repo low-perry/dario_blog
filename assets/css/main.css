@@ -236,11 +236,11 @@ footer {
 }
 
 blockquote {
-    background-color: #b4befe;
-    border-left: 10px solid #ccc;
+    background-color: #181825;
+    border-left: 10px solid #babbf1;
     margin: 1.5em 10px;
     padding: 0.5em 10px;
-    color: #333;
+    color: #ef9f76;
 }
 
 blockquote p {
@@ -248,5 +248,5 @@ blockquote p {
 }
 
 blockquote strong {
-    color: #000;
+    color: #e78284;
 }

@@ -1,170 +1,361 @@
 ---
 layout: page
-title:  "Tutorial on how to create your own syntax highlighter theme"
+title:  "Creating your own Jekyll syntax highlighting theme"
 date: 2025-03-05 17:45:33 +0100
 categories: jekyll tutorial
 ---
 
-The following java code displays [my theme](https://github.com/low-perry/my-jekyll-syntax-highlighter-theme) of choice, and I am going to use that snippet to show you how to create your own theme.
+When [Jekyll](https://jekyllrb.com/) applies syntax highlighting, it uses specific [CSS](https://developer.mozilla.org/en-US/docs/Web/CSS) classes to style different elements of the code. Below are the key elements, their rendered [HTML](https://developer.mozilla.org/en-US/docs/Web/HTML), and how you can modify their appearance in your theme.
+
+### Basic Example
+
+#### Java Example
 
 ```java
 
-public class GenericClassExample<T, V> {
-    private T first;
-    private V second;
-    private static final int LOW = 123;
-
-    public GenericClassExample(T first, V second) {
-        this.first = first;
-        this.second = second;
-    }
-
-    public T getFirst() {
-        return first;
-    }
-
-    public void setFirst(T first) {
-        this.first = first;
-    }
-
-    public V getSecond() {
-        return second;
-    }
-
-    public void setSecond(V second) {
-        this.second = second;
-    }
-
-    @Override
-    public String toString() {
-        return "GenericClassExample{" +
-                "first=" + first +
-                ", second=" + second +
-                '}';
-    }
-
-    public static void main(String[] args) {
-        GenericClassExample<String, Integer> example = new GenericClassExample<>("Hello", 123);
-        System.out.println(example);
-
-        example.setFirst("World");
-        example.setSecond(456);
-        System.out.println(example);
-
-        // This demonstrates the primitives
-        byte a = 1;
-        short b = 2;
-        int c = 3;
-        boolean d = true;
-        boolean e = (a < 3) ? true : false;
-
-        //Reference types
-        Integer ab = 4;
-
-        /* Create an ArrayList with positive and negative numbers */
-        List<Integer> arr = new ArrayList<>();
-        arr.add(-10);
-        arr.add(20);
-        arr.add(-30);
-        arr.add(40);
-        arr.add(-50);
-        arr.add(60);
-
-        // Print the ArrayList
-        System.out.println("ArrayList: " + arr);
-
-        // Check for positive numbers in the ArrayList
-        for (Integer n : arr) {
-            if (n > 0) {
-                System.out.println(n + " is positive.");
-            } else {
-                System.out.println(n + " is negative.");
-            }
-        }
-    }
-    
-}
+    int num = 3;
 
 ```
 
-1. **Access modifiers** like `public`, `private` etc., **non-access modifiers** like `final`, `abstract`, `static` etc., and the `class` and `interface` keywords are rendered on the HTML as `<span>` elements with the class `class="kd"`, who are children of a `<pre>` element with the class `class="highlight"`. To change their color do the following:
+#### Rendered HTML
 
-    ```css
+```html
+
+    <div class="language-java highlighter-rouge">
+        <div class="highlight">
+            <pre class="highlight">
+                <code>
+                    <span class="kt">int</span>
+                    <span class="n">num</span>
+                    <span class="o">=</span>
+                    <span class="mi">3</span>
+                    <span class="o">;</span>
+                </code>
+            </pre>
+        </div>
+    </div>
+
+```
+
+The following java code snippet showcases [my chosen theme](https://github.com/low-perry/my-jekyll-syntax-highlighter-theme). I will use this snippet to guide you through the process of creating your own theme.
+
+```java
+
+    import java.util.ArrayList;
+    import java.util.List;
+
+    public class GenericClassExample<T, V> {
+        private T first;
+        private V second;
+        private static final int LOW = 123;
+
+        public GenericClassExample(T first, V second) {
+            this.first = first;
+            this.second = second;
+        }
+
+        public T getFirst() {
+            return first;
+        }
+
+        public void setFirst(T first) {
+            this.first = first;
+        }
+
+        public V getSecond() {
+            return second;
+        }
+
+        public void setSecond(V second) {
+            this.second = second;
+        }
+
+        @Override
+        public String toString() {
+            return "GenericClassExample{" +
+                    "first=" + first +
+                    ", second=" + second +
+                    '}';
+        }
+
+        public static void main(String[] args) {
+            GenericClassExample<String, Integer> example = new GenericClassExample<>("Hello", 123);
+            System.out.println(example);
+
+            example.setFirst("World");
+            example.setSecond(456);
+            System.out.println(example);
+
+            // This demonstrates the primitives
+            byte a = 1;
+            short b = 2;
+            int c = 3;
+            boolean d = true;
+            boolean e = (a < 3) ? true : false;
+
+            //Reference types
+            Integer ab = 4;
+
+            /* Create an ArrayList with positive and negative numbers */
+            List<Integer> arr = new ArrayList<>();
+            arr.add(-10);
+            arr.add(20);
+            arr.add(-30);
+            arr.add(40);
+            arr.add(-50);
+            arr.add(60);
+
+            // Print the ArrayList
+            System.out.println("ArrayList: " + arr);
+
+            // Check for positive numbers in the ArrayList
+            for (Integer n : arr) {
+                if (n > 0) {
+                    System.out.println(n + " is positive.");
+                } else {
+                    System.out.println(n + " is negative.");
+                }
+            }
+        }
+        
+    }
+
+```
+
+## Customizing Syntax Highlighting Colors
+
+### 1. Access Modifiers & Non-Access Modifiers**
+
+**Examples:** `public`, `private` & `final`, `abstract`, `static`
+
+**Rendered HTML:**
+
+```html
+
+    <span class="kd">public</span>
+
+```
+
+**CSS:**
+
+```css
+
     .highlight .kd {
         color: #f38ba8; /* color of your choosing */
     }
-    ```
 
-2. **Operators** like `new`, `+`, `?`, `.`, `=` etc, and **punctuation** like `{}`, `()`, `,`, `;` etc., are rendered on the HTML as `<span>` elements with the class `class="o"`. (This is only in Java's case, in other languages like C# the punctuation has the class `class=`p`). To change their color do the following:
+```
 
-    ```css
-        .highlight .o {
-            color: #f38ba8; /* color of your choosing */
-        }
-    ```
+### 2. Operators & Punctuation
 
-3. **Class names** or **Reference types** are rendered on the HTML as `<span>` elements with the class `class="nc"`. To change their color do the following:
+**Examples:** `+`, `?`, `.`, `=` & `{}`, `()`, `,`, `;`
 
-    ```css
-        .highlight .kd {
-            color: #89b4fa; /* color of your choosing */
-        }
-    ```
+**Rendered HTML:**
 
-4. **Primitive types** and **void** are rendered on the HTML as `<span>` elements with the class `class="kt"`. To change their color do the following:
+```html
 
-    ```css
-        .highlight .kt {
-            color: #74c7ec; /* color of your choosing */
-        }
-    ```
+    <span class="o">=</span>
 
-5. **Reserved keywords** for looping (`while`, `for`), branching (`if`, `else`, `switch`), skipping or breaking form loops or branches (`break`, `continue`), `this` and the `new` operator, are rendered on the HTML as `<span>` elements with the class `class="k"`. To change their color do the following:
+```
 
-    ```css
-        .highlight .k {
-            color: #f38ba8; /* color of your choosing */
-        }
-    ```
+> **Note:**This is only in Java's case, in other languages like C# or JavaScript the punctuations have the class `class="p"`while the operators remain the same.
 
-6. **Functions** and **methods** are rendered on the HTML as `<span>` elements with the class `class="nf"`. Be careful, the method calls on an object are rendered with the `class="na"` (This happens only in the pattern `object.method()` where `object` has `class="n"` and `.` operator has `class="o"`). To change their color do the following:
+**CSS:**
 
-    ```css
-        .highlight .nf, .n + .o + .na, .na + .o + .na {
-            color: #a6e3a1; /* color of your choosing */
-        }
-    ```
+```css
 
-7. **Arguments**, **variables** and **instance fields** are rendered on the HTML as `<span>` elements with the class `class="n"`. When we refer to a class member with the `this` keyword then it is rendered with the `class="na"`. To change their color do the following:
+    .highlight .o {
+        color: #f38ba8; /* color of your choosing */
+    }
 
-    ```css
-        .highlight .n, .highlight .na  {
-            color: #ced6f5; /* color of your choosing */
-        }
-    ```
+```
 
-8. **String literals** are rendered on the HTML as `<span>` elements with the class `class="s"`.To change their color do the following:
+### 3. Class Names & Reference Types
 
-    ```css
-        .highlight .s {
-            color:  #f9e2af; /* color of your choosing */
-        }
-    ```
+**Examples:** `String`, `Integer`, `ArrayList`, `GenericClassExample`
 
-9. **Number literals** are rendered on the HTML as `<span>` elements with the class `class="mi"`. **Boolean literals** are rendered on the HTML as `<span>` elements with the class `class="kc"`. To change their color do the following:
+**Rendered HTML:**
 
-    ```css
-        .highlight .kc, .highlight .mi {
+```html
+
+    <span class="nc">String</span>
+
+```
+
+**CSS:**
+
+```css
+
+    .highlight .kd {
+        color: #89b4fa; /* color of your choosing */
+    }
+
+```
+
+### 4. Primitive Types & void
+
+**Examples**: `int`, `boolean`, `byte`, `short`
+
+**Rendered HTML:**
+
+```html
+
+    <span class="kt">int</span>
+
+```
+
+**CSS:**
+
+```css
+
+    .highlight .kt {
+        color: #89b4fa; /* color of your choosing */
+    }
+    
+```
+
+### 5. Reserved Keywords
+
+**Examples**: `while`, `for`, `if`, `else`, `switch`, `break`, `continue`
+
+**Rendered HTML:**
+
+```html
+
+    <span class="k">for</span>
+
+```
+
+> **Note:** The `new` operator has the same class name in Java.
+
+**CSS:**
+
+```css
+
+    .highlight .k {
+        color: #89b4fa; /* color of your choosing */
+    }
+
+```
+
+### 6. Functions & Methods
+
+**Examples**: `toString()`, `setFirst()`, `setSecond()`, `getFirst()`
+
+**Rendered HTML:**
+
+```html
+
+    <span class="nf">toString</span>
+
+```
+
+> **Note:** The method calls on an object are rendered with the `class="na"` (This happens only in the pattern `object.method()` where `object` has `class="n"` and `.` operator has `class="o"`).
+
+**CSS:**
+
+```css
+
+    .highlight .nf, .n + .o + .na, .na + .o + .na {
+        color: #a6e3a1; /* color of your choosing */
+    }
+
+```
+
+### 7. Arguments, Variables & Instance Fields
+
+**Examples**: `first`, `second`, `arr`, `args`
+
+**Rendered HTML:**
+
+```html
+
+    <span class="n">first</span>
+
+```
+
+> **Note:** When we refer to a class member with the `this` keyword then it is rendered with the `class="na"`
+
+**CSS:**
+
+```css
+
+    .highlight .n, .highlight .na {
+        color: #ced6f5; /* color of your choosing */
+    }
+
+```
+
+### 8. String Literals
+
+**Examples**: `"Hello"`, `"World"`, `"is positive"`, `"is negative"`
+
+**Rendered HTML:**
+
+```html
+
+    <span class="s">"Hello"</span>
+    
+```
+
+**CSS:**
+
+```css
+
+    .highlight .s {
+        color: #f9e2af;
+    }
+
+```
+
+### 9. Number & Boolean Literals
+
+**Examples**: `-10`, `123` & `true`, `false`
+
+**Rendered HTML:**
+
+```html
+
+    <span class="mi">-10</span>
+
+    <span class="kc">true</span>
+
+```
+
+**CSS:**
+
+```css
+
+    .highlight .kc, .highlight .mi {
         color: #cba6f7; /* color of your choosing */
-        }
-    ```
+    }
 
-10. **Single line comments** are rendered on the HTML as `<span>` elements with the class `class="c1"`. **Multi line comments** are rendered on the HTML as `<span>` elements with the class `class="cm"`. To change their color do the following:
+```
 
-    ```css
-        .highlight .c1, .highlight .cm {
-            color: #505050; /* color of your choosing */
-        }
-    ```
+### 10. Comments
 
-> **Note:** This is an example based on Java, to be more careful please inspect the HTML elements on your browser's dev tools.
+**Examples**: `// Single line comment`, `/* Multi-line comment */`
+
+**Rendered HTML:**
+
+```html
+
+    <span class="c1">// Single line comment</span>
+
+    <span class="cm">/* Multi-line comment */</span>
+
+```
+
+**CSS:**
+
+```css
+
+    .highlight .c1, .highlight .cm {
+        color: #505050; /* color of your choosing */
+    }
+
+```
+
+> **Note:** This example is based on Java. If you're using another language, inspect the HTML elements in your browser's developer tools to identify the correct classes.
+
+Now you have everything you need to create your own [Jekyll](https://jekyllrb.com/) syntax highlighting theme! 🚀

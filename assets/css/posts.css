@@ -5,6 +5,7 @@
     justify-content: space-between;
 }
 
+
 .post-card {
     background-color: #313244;
     border: 1px solid #f5e0dc;
@@ -34,7 +35,7 @@
 }
 
 /* Responsive styles */
-@media (max-width: 768px) {
+@media (max-width: 975px) {
     .post-card {
         width: calc(50% - 20px); /* 2 posts per row on smaller screens */
     }
