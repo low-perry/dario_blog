@@ -15,7 +15,7 @@
   color: #a6e3a1;
 }
 .highlight .nt {
-  color: #a6e3a1;
+  color: #f38ba8;
 }
 .highlight .o, .highlight .ow {
   color: #f38ba8;
@@ -38,7 +38,7 @@
   color: #f38ba8;
 }
 .highlight .kc {
-  color: #89b4fa;
+  color: #cba6f7;
 }
 .highlight .kt {
   color: #74c7ec;
@@ -78,4 +78,16 @@
 }
 .highlight .nf {
   color: #a6e3a1;
+}
+
+.n + .o + .na, .na + .o + .na {
+    color:#a6e3a1;
+}
+
+.language-plaintext.highlighter-rouge {
+  background-color: #181825;
+  color: #94e2d5;
+  font-size: large;
+  padding-left: 5px;
+  padding-right: 5px;
 }

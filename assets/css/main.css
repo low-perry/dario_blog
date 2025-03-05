@@ -234,3 +234,19 @@ footer {
         margin-top: 100px; /* Increase margin-top when dropdown is active */
     }
 }
+
+blockquote {
+    background-color: #b4befe;
+    border-left: 10px solid #ccc;
+    margin: 1.5em 10px;
+    padding: 0.5em 10px;
+    color: #333;
+}
+
+blockquote p {
+    margin: 0;
+}
+
+blockquote strong {
+    color: #000;
+}
