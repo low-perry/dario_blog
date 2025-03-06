@@ -5,18 +5,22 @@
             <!--{{site.title}} -->
         </a>
     </div>
-    <div class="navbar-toggle" id="navbar-toggle">
-        <span></span>
-        <span></span>
-        <span></span>
-    </div>
-    <div class="navbar-links" id="navbar-links">
-        <ul>
-            {% for page in site.pages %}
-                {% if page.title %}
-                    <li><a href="{{ page.url | relative_url }}" class="nav-link-{{ forloop.index }}">{{ page.title }}</a></li>
-                {% endif %}
-            {% endfor %}
-        </ul>
+    <div class="nav-menu">
+        <i class="fas fa-search" id="search-icon"></i>
+        <div class="navbar-toggle" id="navbar-toggle">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <div class="navbar-links" id="navbar-links">
+            <ul>
+                
+                {% for page in site.pages %}
+                    {% if page.title %}
+                        <li><a href="{{ page.url | relative_url }}" class="nav-link-{{ forloop.index }}">{{ page.title }}</a></li>
+                    {% endif %}
+                {% endfor %}
+            </ul>
+        </div>
     </div>
 </nav>
