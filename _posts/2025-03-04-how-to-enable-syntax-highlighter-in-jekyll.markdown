@@ -3,6 +3,7 @@ layout: page
 title:  "How to enable code syntax highlighter in Jekyll!"
 date:   2025-03-04 18:13:33 +0100
 categories: jekyll tutorial
+permalink: /blog/:title
 ---
 
 While customizing my own [Jekyll](https://jekyllrb.com/) theme instead of using the default [Minima](https://github.com/jekyll/minima), I noticed that syntax highlighting stopped working. This guide walks through the solution.
@@ -88,4 +89,4 @@ To ensure your syntax highlighting works correctly, add some sample code to a po
 ```
 
 Now, syntax highlighting should work properly in your [Jekyll](https://jekyllrb.com/) project.
-If you want to create your own theme, [follow my tutorial]({{ '/jekyll/tutorial/2025/03/05/tutorial-how-to-create-your-own-syntax-theme.html' | relative_url }}).
+If you want to create your own theme, [follow my tutorial]({{ '/blog/tutorial-how-to-create-your-own-syntax-theme' | relative_url }}).

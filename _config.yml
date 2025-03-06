@@ -29,6 +29,7 @@ github_username: low-perry
 # Build settings
 plugins:
   - jekyll-feed
+  - jekyll-email-protect
 
 # Markdown settings
 markdown: kramdown

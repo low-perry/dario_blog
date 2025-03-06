@@ -3,6 +3,7 @@ layout: page
 title:  "Creating your own Jekyll syntax highlighting theme"
 date: 2025-03-05 17:45:33 +0100
 categories: jekyll tutorial
+permalink: /blog/:title
 ---
 
 When [Jekyll](https://jekyllrb.com/) applies syntax highlighting, it uses specific [CSS](https://developer.mozilla.org/en-US/docs/Web/CSS) classes to style different elements of the code. Below are the key elements, their rendered [HTML](https://developer.mozilla.org/en-US/docs/Web/HTML), and how you can modify their appearance in your theme.
@@ -124,9 +125,9 @@ The following java code snippet showcases [my chosen theme](https://github.com/l
 
 ## Customizing Syntax Highlighting Colors
 
-### 1. Access Modifiers & Non-Access Modifiers**
+### 1. Access Modifiers , Non-Access Modifiers & Declaration Keywords**
 
-**Examples:** `public`, `private` & `final`, `abstract`, `static`
+**Examples:** `public`, `private` & `final`, `abstract`, `static` & `class`, `interface`
 
 **Rendered HTML:**
 
@@ -158,7 +159,7 @@ The following java code snippet showcases [my chosen theme](https://github.com/l
 
 ```
 
-> **Note:**This is only in Java's case, in other languages like C# or JavaScript the punctuations have the class `class="p"`while the operators remain the same.
+> **Note:**This is only in Java's case, in other languages like C# or JavaScript the punctuations have `class="p"`while the operators remain the same.
 
 **CSS:**
 
@@ -194,7 +195,7 @@ The following java code snippet showcases [my chosen theme](https://github.com/l
 
 ### 4. Primitive Types & void
 
-**Examples**: `int`, `boolean`, `byte`, `short`
+**Examples**: `int`, `boolean`, `byte`, `short` & `void`
 
 **Rendered HTML:**
 
@@ -214,7 +215,7 @@ The following java code snippet showcases [my chosen theme](https://github.com/l
     
 ```
 
-### 5. Reserved Keywords
+### 5. Control Flow Keywords
 
 **Examples**: `while`, `for`, `if`, `else`, `switch`, `break`, `continue`
 
@@ -226,7 +227,7 @@ The following java code snippet showcases [my chosen theme](https://github.com/l
 
 ```
 
-> **Note:** The `new` operator has the same class name in Java.
+> **Note:** The `new` operator has the same class name in Java as these keywords
 
 **CSS:**
 
@@ -250,7 +251,7 @@ The following java code snippet showcases [my chosen theme](https://github.com/l
 
 ```
 
-> **Note:** The method calls on an object are rendered with the `class="na"` (This happens only in the pattern `object.method()` where `object` has `class="n"` and `.` operator has `class="o"`).
+> **Note:** The method calls on an object are rendered with the `class="na"` (This happens only in the pattern `object.method()` where `object` has `class="n"` and the `.` operator has `class="o"`).
 
 **CSS:**
 
@@ -334,7 +335,7 @@ The following java code snippet showcases [my chosen theme](https://github.com/l
 
 ### 10. Comments
 
-**Examples**: `// Single line comment`, `/* Multi-line comment */`
+**Examples**: `// Single line comment` & `/* Multi-line comment */`
 
 **Rendered HTML:**
 

@@ -279,10 +279,10 @@ footer {
 
 blockquote {
     background-color: #181825;
-    border-left: 10px solid #babbf1;
+    border-left: 10px solid #11111b;
     margin: 1.5em 10px;
     padding: 0.5em 10px;
-    color: #ef9f76;
+    color: #fab387;
 }
 
 blockquote p {
