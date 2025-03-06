@@ -2,7 +2,7 @@
     <div class="navbar-brand">
         <a href="{{ site.baseurl }}/">
             <img src="{{ site.baseurl }}/assets/images/logo.png" alt="Logo" style="height: 60px; vertical-align: middle; margin-right: 8px;" />
-            {{site.title}}
+            <!--{{site.title}} -->
         </a>
     </div>
     <div class="navbar-toggle" id="navbar-toggle">
@@ -14,7 +14,7 @@
         <ul>
             {% for page in site.pages %}
                 {% if page.title %}
-                    <li><a href="{{ page.url | relative_url }}">{{ page.title }}</a></li>
+                    <li><a href="{{ page.url | relative_url }}" class="nav-link-{{ forloop.index }}">{{ page.title }}</a></li>
                 {% endif %}
             {% endfor %}
         </ul>

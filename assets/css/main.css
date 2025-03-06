@@ -2,7 +2,7 @@
     --background-color: #1e1e2e;
     --text-color:  #cdd6f4;
     --mantle-color: #181825;
-    --title-color: #b4befe;
+    --title-color: #fbdbab;
     --title-font-size: 32px;
     --link-color: #89b4fa;
     --font-family: 'Inter', sans-serif;
@@ -71,10 +71,41 @@ a {
     text-decoration: none;
     font-weight: semi-bold;
     font-size: 20px;
+    position: relative;
+    transition: color 0.3s ease-in-out;
 }
 
-.navbar-links ul li a:hover {
-    text-decoration: underline;
+.navbar-links ul li a::after {
+    content: '';
+    position: absolute;
+    bottom: -5px; /* Adjust the position as needed */
+    left: 50%;
+    width: 0;
+    height: 4px; /* Adjust the height as needed */
+    background-color: var(--after-color); /* Use the link color variable */
+    transition: width 0.3s ease-in-out, left 0.3s ease-in-out; /* Add transition for smooth animation */
+    transform: translateX(-50%);
+}
+
+.navbar-links ul li a:hover::after,
+.navbar-links ul li a.active::after {
+    width: 20px; 
+    left: 50%;
+}
+.nav-link-1 {
+    --after-color: #ff6f61; 
+}
+
+.nav-link-2 {
+    --after-color: #fe640b; 
+}
+
+.nav-link-3 {
+    --after-color: #40a02b; 
+}
+
+.nav-link-4 {
+    --after-color: #7287fd; /* Example color for the fourth link */
 }
 
 .navbar-toggle {
@@ -136,7 +167,7 @@ footer {
     align-items: center;
 }
 .hero-text, .hero-logo {
-    margin-top: 50px;
+    margin-top: 20px;
     width: 50%;
 }
 .hero-logo {
@@ -152,6 +183,11 @@ footer {
     -webkit-text-fill-color: transparent;
     font-size: 50px;
     font-weight: bold;
+}
+.hero-text p.hero-welcome {
+    font-size: 20px; 
+    font-weight: bold;
+    color: var(--text-color);
 }
 
 @keyframes spin {
@@ -231,7 +267,7 @@ footer {
     }
 
     .dropdown-active {
-        margin-top: 100px; /* Increase margin-top when dropdown is active */
+        margin-top: 135px; 
     }
 }
 
