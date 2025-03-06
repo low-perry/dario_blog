@@ -87,12 +87,12 @@ a {
 .navbar-links ul li a::after {
     content: '';
     position: absolute;
-    bottom: -5px; /* Adjust the position as needed */
+    bottom: -5px; 
     left: 50%;
     width: 0;
-    height: 4px; /* Adjust the height as needed */
-    background-color: var(--after-color); /* Use the link color variable */
-    transition: width 0.3s ease-in-out, left 0.3s ease-in-out; /* Add transition for smooth animation */
+    height: 4px; 
+    background-color: var(--after-color); 
+    transition: width 0.3s ease-in-out, left 0.3s ease-in-out; 
     transform: translateX(-50%);
 }
 
@@ -114,7 +114,7 @@ a {
 }
 
 .nav-link-4 {
-    --after-color: #b4befe; /* Example color for the fourth link */
+    --after-color: #b4befe; 
 }
 
 .navbar-toggle {
@@ -308,16 +308,16 @@ blockquote strong {
 #search-icon::after {
     content: '';
     position: absolute;
-    bottom: -5px; /* Adjust the position as needed */
+    bottom: -5px; 
     left: 50%;
     width: 0;
-    height: 4px; /* Adjust the height as needed */
-    background-color: #89b4fa; /* Use the desired color */
-    transition: width 0.3s ease-in-out, left 0.3s ease-in-out; /* Add transition for smooth animation */
+    height: 4px;
+    background-color: #89b4fa; 
+    transition: width 0.3s ease-in-out, left 0.3s ease-in-out; 
     transform: translateX(-50%);
 }
 
 #search-icon:hover::after {
-    width: 20px; /* Adjust the width as needed */
+    width: 20px; 
     left: 50%;
 }
