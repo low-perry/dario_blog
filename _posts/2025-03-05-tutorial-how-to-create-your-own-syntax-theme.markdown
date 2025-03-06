@@ -2,6 +2,7 @@
 layout: page
 title:  "Creating your own Jekyll syntax highlighting theme"
 date: 2025-03-05 17:45:33 +0100
+author: Dario Haxhiraj
 categories: jekyll tutorial
 excerpt: "Learn how to create your own syntax theme for code highlighting in Jekyll."
 permalink: /blog/:title
