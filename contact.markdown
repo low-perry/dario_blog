@@ -2,6 +2,7 @@
 layout: page
 title: Contact
 permalink: /contact/
+color: rgb(180, 190, 254)
 ---
 
 ### To get in touch with me please:

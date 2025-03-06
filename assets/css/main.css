@@ -28,6 +28,12 @@ body {
     font-family: var(--font-family);
     flex: 1;
 }
+h1.page-title {
+    color: var(--page-color);
+    font-size: 3em; 
+    font-weight: bold; 
+    margin-bottom: 20px;
+}
 a {
     color: var(--link-color);
     text-decoration: none;
@@ -97,15 +103,15 @@ a {
 }
 
 .nav-link-2 {
-    --after-color: #fe640b; 
+    --after-color: #fab387; 
 }
 
 .nav-link-3 {
-    --after-color: #40a02b; 
+    --after-color: #a6e3a1; 
 }
 
 .nav-link-4 {
-    --after-color: #7287fd; /* Example color for the fourth link */
+    --after-color: #b4befe; /* Example color for the fourth link */
 }
 
 .navbar-toggle {

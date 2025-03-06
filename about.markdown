@@ -2,6 +2,7 @@
 layout: page
 title: Me
 permalink: /me/
+color: rgb(250, 179, 135)
 ---
 
 My name is Dario.
