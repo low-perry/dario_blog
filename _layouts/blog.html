@@ -7,10 +7,10 @@ layout: main
 
 <div class="posts">
     {% for post in site.posts %}
-        <div class="post-card">
+        <article class="post-card">
             <h2><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h2>
             <p class="post-date">{{ post.date | date: "%B %d, %Y" }}</p>
             <p class="post-excerpt">{{ post.excerpt }}</p>
-        </div>
+        </article>
     {% endfor %}
 </div>
