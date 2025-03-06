@@ -292,3 +292,26 @@ blockquote p {
 blockquote strong {
     color: #e78284;
 }
+
+.header-search {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+#search-icon {
+    cursor: pointer;
+    font-size: 1.5em;
+    margin-right: 10px;
+}
+
+.header-search-form {
+    display: none;
+    align-items: center;
+}
+
+#search-box {
+    padding: 5px;
+    font-size: 1em;
+}
+

@@ -13,10 +13,19 @@
     <div class="navbar-links" id="navbar-links">
         <ul>
             {% for page in site.pages %}
-                {% if page.title %}
+                {% if page.title and page.title != "Search Results" %}
                     <li><a href="{{ page.url | relative_url }}" class="nav-link-{{ forloop.index }}">{{ page.title }}</a></li>
                 {% endif %}
             {% endfor %}
+            <li>
+                <div class="header-search">
+                    <i id="search-icon" class="fas fa-search"></i>
+                    <form class="header-search-form" action="/search.html" method="get">
+                        <input type="text" id="search-box" name="query">
+                        <input type="submit" value="search">
+                    </form>
+                </div>
+            </li>
         </ul>
     </div>
 </nav>
