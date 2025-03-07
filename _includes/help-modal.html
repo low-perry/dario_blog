@@ -1,0 +1,60 @@
+<div id="help-modal" class="help-modal">
+    <div class="help-modal-content">
+        <h2>Help Menu</h2>
+        <p>Press <kbd>Ctrl</kbd>+<kbd>Q</kbd> to open or close this help menu.</p>
+        <div class="searching">
+            <h3>Searching</h3>
+            <p>Click on the search icon or press <kbd>Ctrl</kbd>+<kbd>K</kbd> to search for a blog post.</p>
+            <p>To close the search menu, click the 'X' button, click outside the menu, press <kbd>Esc</kbd>, or use <kbd>Ctrl</kbd>+<kbd>K</kbd> </p>
+            <p>You can search by author, title, or article content</p>
+        </div>
+        <div class="general">
+            <h3>General</h3>
+            <p>Click on the hamburger icon to open the navigation menu on mobile.</p>
+            <p>Click on the logo to go to the home page.</p>
+            <p>Click on the title of a blog post to read it.</p>
+        </div>
+        <div class="about-site">
+            <h3>About the Site</h3>
+            <p>This site is a blog where I write about programming, web development, and other tech-related topics.</p>
+            <p>It is built using Jekyll, a static site generator.</p>
+            <p>It is hosted on GitHub Pages.</p>
+            <p>The 'Me' page is a bio.</p>
+            <p>The blog page contains articles I write.</p>
+            <p>The contact page has my contact details.</p>
+        </div>
+        
+        <span class="close-help"> &times;</span>
+    </div>
+</div>
+<script>
+document.addEventListener('keydown', function(event) {
+    const modal = document.getElementById('help-modal');
+    if ((event.ctrlKey || event.metaKey) && event.key === 'q') {
+        event.preventDefault();
+        if (modal.style.display === 'block') {
+            modal.style.display = 'none';
+        } else {
+
+            modal.style.display = 'block';
+        }
+    } else if (event.key === 'Escape') {
+        
+        modal.style.display = 'none';
+    }
+});
+
+
+document.querySelector('.close-help').addEventListener('click', function() {
+    
+    document.getElementById('help-modal').style.display = 'none';
+});
+
+
+window.addEventListener('click', function(event) {
+    if (event.target == document.getElementById('help-modal')) {
+    
+        document.getElementById('help-modal').style.display = 'none';
+    }
+});
+</script>
