@@ -10,6 +10,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="stylesheet" href="{{ '/assets/css/modal.css' | relative_url }}">
+    <link rel="stylesheet" href="{{ '/assets/css/help-modal.css' | relative_url }}">
     <style>
         :root {
             --page-color: {{ page.color }};
@@ -23,6 +24,7 @@
         {{ content }}
     </main>
     {% include search-modal.html %}
+    {% include help-modal.html %}
     {% include footer.html %}
     <script src="{{ '/assets/js/main.js' | relative_url }}"></script>
 </body>
