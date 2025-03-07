@@ -48,3 +48,29 @@
     text-decoration: none;
     cursor: pointer;
 }
+
+#search-results {
+    padding: 0;
+}
+
+#search-results li {
+    list-style-type: none;
+    padding: 10px;
+    border-bottom: 1px solid #f5e0dc;
+    background-color: rgba(54, 58, 79, 0.8);
+    margin: 10px 10px;
+    cursor: pointer;
+}
+
+#search-results li:hover {
+    background-color: rgba(54, 58, 79, 1);
+}
+
+#search-results li a {
+    color: var(--text-color);
+    text-decoration: none;
+}
+
+#search-results  h2 {
+    color: #b4befe;
+}
