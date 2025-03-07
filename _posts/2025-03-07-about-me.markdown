@@ -1,8 +1,11 @@
 ---
 layout: page
-title: Me
-permalink: /me/
-color: rgb(250, 179, 135)
+title:  About me
+author: Dario Haxhiraj
+date: 2025-03-07 23:45:33 +0100
+categories: me
+excerpt: This an article i started as an "about me" section on the "Me" page of my website
+permalink: /blog/:title
 ---
 
 If my social media presence has ever spoken some truth about me, is that me and the "about me" sections, have been on a philosophical conflict for as long as my digital footprint has existed. (My first one ever being \*describes who he is\* and the last one being "Why is it always Bios?")
@@ -26,26 +29,3 @@ And yet, today is the anniversary of the opening of the first school taught in m
 In this rebellious state, where I am expressing my opposition to the writing principles , as I am finishing scribing this article for the orange section of my website on my orange Notebook, I say hello and thank you to you, dear reader, for showing patience in this journey into my thoughts. My name is Dario. My favorite color is orange, like a peach or the sunset reflection at the meet point of the Ionian and Adriatic sea, in my hometown.
 
 > Every page must explode, either by profound heavy seriousness, the whirlwind...enthusiasm for principles, or it's typography. - Tristan Tzara
-
-My name is Dario.
-
-## Favorite activities
-
-- running
-- reading
-- playing chess
-- coding
-- hiking
-
-## other favorites
-
-- color : <span style="color: orange;">orange</span>
-- food: <span>🍝</span>
-- books:
-  - The Odyssey by Homer
-  - The Magic Mountain by Thomas Mann
-  - The General of the Dead Army by Ismail Kadare
-  - The Human Comedy by William Saroyan
-  - A Season in Hell by Arthur Rimbaud
-- sport: volleyball
-- way to relax: walk along the beach
