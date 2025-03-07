@@ -305,10 +305,6 @@ blockquote strong {
     margin-right: 10px;
 }
 
-.header-search-form {
-    display: none;
-    align-items: center;
-}
 
 #search-box {
     padding: 5px;

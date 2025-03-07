@@ -10,7 +10,7 @@
                 appendString += '<li><span class="post-meta">' + item.date + '</span><a href="' +
                     item.url + '"><h2>' + item.title + '</h2></a>';
                 appendString += '<p class="small">' + decodeURI(item.content).substring(0, 100)
-                    + '...</p></li>';
+					+ '...</p></li>';
             }
 
             searchResults.innerHTML = appendString;
@@ -30,6 +30,7 @@
                 return decodeURIComponent(pair[1].replace(/\+/g, '%20'));
             }
         }
+        return '';
     }
 
     function doSearch(searchTerm) {
@@ -37,7 +38,7 @@
         // Initialize lunr.js with the fields to search
         const idx = lunr(function () {
             this.field('id');
-            this.field('title', { boost: 10 });
+            this.field('title', {boost: 10});
             this.field('author');
             this.field('category');
             this.field('content');
@@ -59,8 +60,8 @@
 
     const searchBox = document.getElementById('search-box');
     const searchTerm = getQuery('query');
-    if (!searchBox.value)
-        searchBox.value = searchTerm;
+	if(!searchBox.value)
+		searchBox.value=searchTerm;
 
     if (window.store != null)
         doSearch(searchTerm);
@@ -70,17 +71,3 @@
             doSearch(this.value);
         });
 })();
-
-document.addEventListener("DOMContentLoaded", function () {
-    const searchIcon = document.getElementById("search-icon");
-    const searchForm = document.querySelector(".header-search-form");
-
-    searchIcon.addEventListener("click", function () {
-        if (searchForm.style.display === "none" || searchForm.style.display === "") {
-            searchForm.style.display = "flex";
-            document.getElementById("search-box").focus();
-        } else {
-            searchForm.style.display = "none";
-        }
-    });
-});
