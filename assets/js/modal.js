@@ -1,7 +1,7 @@
 document.addEventListener('keydown', function(event) {
     const modal = document.getElementById('search-modal');
     const searchInput = document.getElementById('search-input');
-    if (event.ctrlKey && event.key === 'k') {
+    if ((event.ctrlKey || event.metaKey) && event.key === 'k') {
         event.preventDefault();
         // @ts-ignore
         if (modal.style.display === 'block') {
