@@ -82,7 +82,9 @@ The following java code snippet showcases [my chosen theme](https://github.com/l
         }
 
         public static void main(String[] args) {
-            GenericClassExample<String, Integer> example = new GenericClassExample<>("Hello", 123);
+            GenericClassExample<String, Integer> example;
+            example = new GenericClassExample<>("Hello", 123);
+            
             System.out.println(example);
 
             example.setFirst("World");
