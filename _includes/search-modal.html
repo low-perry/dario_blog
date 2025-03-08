@@ -6,6 +6,7 @@
     </div>
 </div>
 <script>
+     if (!localStorage.getItem('store')) {
         // Template to generate the JSON to search
         window.store = {
           {% for post in site.posts %}
@@ -20,6 +21,12 @@
             {% unless forloop.last %},{% endunless %}
           {% endfor %}
         };
+        console.log('Store created:', window.store);
+
+        // Save window.store to local storage
+        localStorage.setItem('store', JSON.stringify(window.store));
+        console.log('Store saved to local storage:', window.store);
+    }
 </script>
   
   <!-- Import lunr.js from unpkg.com -->

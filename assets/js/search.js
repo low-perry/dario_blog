@@ -34,6 +34,12 @@
             this.field('category');
             this.field('content');
 
+            if (!window.store) {
+                window.store = JSON.parse(localStorage.getItem('store'));
+                console.log('store loaded from localStorage');
+                console.log(window.store);
+            }
+
             for (var key in window.store) { // Add the JSON generated from site content to Lunr.js
                 this.add({
                     'id': key,
