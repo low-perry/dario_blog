@@ -38,6 +38,11 @@ a {
     color: var(--link-color);
     text-decoration: none;
 }
+.page-container {
+    margin: 0 auto;
+    max-width: 800px;
+    padding: 20px;
+}
 
 .navbar {
     position: fixed; /* Make the navbar sticky */
