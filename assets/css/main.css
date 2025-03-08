@@ -182,7 +182,6 @@ footer {
     align-items: center;
 }
 .hero-text, .hero-logo {
-    margin-top: 20px;
     width: 50%;
 }
 .hero-logo {
@@ -198,6 +197,8 @@ footer {
     -webkit-text-fill-color: transparent;
     font-size: 50px;
     font-weight: bold;
+    margin-top: 30px;
+    margin-bottom: 30px;
 }
 .hero-text p.hero-welcome {
     font-size: 20px; 
