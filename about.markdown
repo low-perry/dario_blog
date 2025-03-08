@@ -5,27 +5,8 @@ permalink: /me/
 color: rgb(250, 179, 135)
 ---
 
-If my social media presence has ever spoken some truth about me, is that me and the "about me" sections, have been on a philosophical conflict for as long as my digital footprint has existed. (My first one ever being \*describes who he is\* and the last one being "Why is it always Bios?")
+If my social media presence has ever spoken some truth about me, is that me and the "about me" sections, have been on a [philosophical conflict ]({{ '/blog/about-me' | relative_url }}) for as long as my digital footprint has existed. (My first one ever being \*describes who he is\* and the last one being "Why is it always Bios?")
 
-I asked ChatGpt to do this, but after hours of trying to teach linear algebra about people (me), I remembered that I used to teach linear algebra to some people. The irony made me realize that my foot was convulsing from the impatience and these quotes blitzed inside my brain.
-
-> "Beauty will be convulsive or not at all."- Andre Breton
-
-> "I have no right to drag others into my river." - Tristan Tzara
-
-> "I understand that and not knowing how to express myself without pagan words I'd rather remain silent." - Arthur Rimbaud
-
-And yet, today is the anniversary of the opening of the first school taught in my native tongue, exactly two weeks before the national pagan holiday "Summer's Day". I do have the freedom of the pagan words. And I am extremely passionate about these pagan words, as much as I am passionate about linear algebra. And to ChatGpt (in a french accent 😼Gpt) and these french / naturalized french / french speaking poets who died in France i say:
-
-> "Only temptation is divine" - Breton
-
-> "I open my heart to creation" -Tzara
-
-> "I am alone in possessing a key to this barbarous sideshow" -Rimbaud
-
-In this rebellious state, where I am expressing my opposition to the writing principles , as I am finishing scribing this article for the orange section of my website on my orange Notebook, I say hello and thank you to you, dear reader, for showing patience in this journey into my thoughts. My name is Dario. My favorite color is orange, like a peach or the sunset reflection at the meet point of the Ionian and Adriatic sea, in my hometown.
-
-> Every page must explode, either by profound heavy seriousness, the whirlwind...enthusiasm for principles, or it's typography. - Tristan Tzara
 
 My name is Dario.
 

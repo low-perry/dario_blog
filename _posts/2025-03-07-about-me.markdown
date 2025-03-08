@@ -1,6 +1,6 @@
 ---
 layout: page
-title:  Introduction
+title: Kerouac like frenzy
 author: Dario Haxhiraj
 date: 2025-03-07 23:45:33 +0100
 categories: me
@@ -8,7 +8,6 @@ excerpt: This is an article I started as an "about me" section on the "Me" page 
 permalink: /blog/:title
 ---
 
-If my social media presence has ever spoken some truth about me, is that me and the "about me" sections, have been on a philosophical conflict for as long as my digital footprint has existed. (My first one ever being \*describes who he is\* and the last one being "Why is it always Bios?")
 
 I asked ChatGpt to do this, but after hours of trying to teach linear algebra about people (me), I remembered that I used to teach linear algebra to some people. The irony made me realize that my foot was convulsing from the impatience and these quotes blitzed inside my brain.
 
