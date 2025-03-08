@@ -1,10 +1,10 @@
 ---
 layout: page
-title:  About me
+title:  Introduction
 author: Dario Haxhiraj
 date: 2025-03-07 23:45:33 +0100
 categories: me
-excerpt: This an article i started as an "about me" section on the "Me" page of my website
+excerpt: This is an article I started as an "about me" section on the "Me" page of my website
 permalink: /blog/:title
 ---
 

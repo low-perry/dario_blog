@@ -54,6 +54,11 @@
 
         const results = idx.search(searchTerm); // Perform search with Lunr.js
         // @ts-ignore
+        console.log(results);
+        for (let i = 0; i < results.length; i++) {
+            // @ts-ignore
+            console.log(window.store[results[i].ref]);
+        }
         showResults(results, window.store);
     }
 
