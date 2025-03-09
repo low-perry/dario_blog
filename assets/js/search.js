@@ -27,7 +27,7 @@
 
     function createIndex() {
         // Initialize lunr.js with the fields to search
-        return lunr(function () {
+        const index = lunr(function () {
             this.field('id');
             this.field('title', { boost: 10 });
             this.field('author');
@@ -45,6 +45,17 @@
             }
             console.log('idx created');
         });
+        // Save the index to session storage
+        sessionStorage.setItem('lunrIndex', JSON.stringify(index));
+        return index;
+    }
+
+    function loadIndex() {
+        const savedIndex = sessionStorage.getItem('lunrIndex');
+        if (savedIndex) {
+            return lunr.Index.load(JSON.parse(savedIndex));
+        }
+        return null;
     }
 
     function doSearch(searchTerm) {
@@ -52,13 +63,11 @@
 
         // Check if the index has already been created
         if (!idx) {
-            idx = createIndex(); // Create the index if it doesn't exist
+            idx = loadIndex() || createIndex();
         }
 
         const results = idx.search(searchTerm); // Perform search with Lunr.js
-        console.log(results);
         for (let i = 0; i < results.length; i++) {
-            console.log(window.store[results[i].ref]);
         }
         showResults(results, window.store);
     }
