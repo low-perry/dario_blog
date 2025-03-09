@@ -16,19 +16,62 @@
             --page-color: {{ page.color }};
         }
     </style>
+    <script>
+        
+        // Apply the saved theme before the page loads
+        (function() {
+            const savedTheme = localStorage.getItem('theme');
+            if (savedTheme) {
+                document.documentElement.classList.add(savedTheme);
+            }
+        })();
+    </script>
 </head>
 <body>
     {% include header.html %}
     <main>
-        <button id="toggle-theme">Toggle Theme</button>
         {{ content }}
     </main>
     {% include search-modal.html %}
     {% include help-modal.html %}
     {% include footer.html %}
     <script>
-        document.getElementById('toggle-theme').addEventListener('click', function() {
-            document.body.classList.toggle('light-mode');
+        // Function to apply the saved theme
+        function applySavedTheme() {
+            const savedTheme = localStorage.getItem('theme');
+            if (savedTheme) {
+                document.documentElement.classList.add(savedTheme);
+                updateThemeIcon(savedTheme);
+            } else {
+                updateThemeIcon('dark-mode');
+            }
+        }
+
+        // Function to update the theme icon
+        function updateThemeIcon(theme) {
+            const themeIcon = document.getElementById('theme-icon');
+            if (theme === 'light-mode') {
+                themeIcon.classList.remove('fa-moon');
+                themeIcon.classList.add('fa-sun');
+            } else {
+                themeIcon.classList.remove('fa-sun');
+                themeIcon.classList.add('fa-moon');
+            }
+        }
+
+        // Apply the saved theme on page load
+        applySavedTheme();
+
+        // Toggle theme and save preference to localStorage
+        document.getElementById('theme-icon').addEventListener('click', function() {
+            document.documentElement.classList.toggle('light-mode');
+            if (document.documentElement.classList.contains('light-mode')) {
+                localStorage.setItem('theme', 'light-mode');
+                updateThemeIcon('light-mode');
+            } else {
+                localStorage.removeItem('theme');
+                updateThemeIcon('dark-mode');
+            }
         });
     </script>
     <script src="{{ '/assets/js/main.js' | relative_url }}"></script>

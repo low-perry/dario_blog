@@ -328,7 +328,7 @@ blockquote strong {
 }
 
 
-#search-icon {
+#search-icon, #theme-icon {
     font-size: 20px;
     color: var(--nav-menu-color);
     cursor: pointer;
