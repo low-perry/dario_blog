@@ -334,3 +334,31 @@ blockquote strong {
     width: 20px; 
     left: 50%;
 }
+
+pre {
+    overflow-x: scroll;
+    /* Style the scrollbar for WebKit browsers (Chrome, Safari) */
+    -webkit-overflow-scrolling: touch; /* Optional: smooth scrolling on iOS */
+}
+
+pre::-webkit-scrollbar {
+    width: 12px; /* Width of the scrollbar */
+    height: 12px; /* Height of the scrollbar */
+}
+
+pre::-webkit-scrollbar-thumb {
+    background-color: #89b4fa; /* Color of the scrollbar thumb */
+    border-radius: 6px; /* Roundness of the scrollbar thumb */
+    border: 3px solid #1e1e2e; /* Padding around the scrollbar thumb */
+}
+
+pre::-webkit-scrollbar-track {
+    background-color: #181825; /* Color of the scrollbar track */
+    border-radius: 6px; /* Roundness of the scrollbar track */
+}
+
+/* Style the scrollbar for Firefox */
+pre {
+    scrollbar-width: thin; /* Width of the scrollbar */
+    scrollbar-color: #89b4fa #181825; /* Color of the scrollbar thumb and track */
+}
