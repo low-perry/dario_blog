@@ -43,7 +43,7 @@ public class GenericClassExample<T, V>
 
     public override string ToString()
     {
-    return $"GenericClassExample{{\}}"
+    return $"GenericClassExample{\{\}}"
     }
 
 

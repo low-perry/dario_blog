@@ -20,11 +20,17 @@
 <body>
     {% include header.html %}
     <main>
+        <button id="toggle-theme">Toggle Theme</button>
         {{ content }}
     </main>
     {% include search-modal.html %}
     {% include help-modal.html %}
     {% include footer.html %}
+    <script>
+        document.getElementById('toggle-theme').addEventListener('click', function() {
+            document.body.classList.toggle('light-mode');
+        });
+    </script>
     <script src="{{ '/assets/js/main.js' | relative_url }}"></script>
 </body>
 </html>

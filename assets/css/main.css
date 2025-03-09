@@ -2,13 +2,39 @@
     --background-color: #1e1e2e;
     --text-color:  #cdd6f4;
     --mantle-color: #181825;
-    --title-color: #fbdbab;
-    --title-font-size: 32px;
+    --crust-color: #11111b;
+    --nav-menu-color: #f2cdcd;
+    --nav-link-1-color: #fab387;
+    --nav-link-2-color: #a6e3a1;
+    --nav-link-3-color:  #b4befe;
+    --hero-gradient-1: #f5e0dc;
+    --hero-gradient-2: #cba6f7;
+    --strong-quote-color: #e78284;
     --link-color: #89b4fa;
+    --post-card-color: #313244;
+    --subtext-color: #bac2de;
+    --title-font-size: 32px;
     --font-family: 'Inter', sans-serif;
     --main-padding: 20px;
     --main-margin: 20px;
     --main-font-size: 18px;
+}
+
+.light-mode {
+    --background-color: #eff1f5;
+    --text-color: #4c4f69;
+    --mantle-color: #e6e9ef;
+    --crust-color: #dce0e8;
+    --nav-menu-color: #dd7878;
+    --nav-link-1-color: #fe640b;
+    --nav-link-2-color: #40a02b;
+    --nav-link-3-color: #7287fd;
+    --hero-gradient-1: #dc8a78;
+    --hero-gradient-2:  #8839ef;
+    --strong-quote-color: #d20f39;
+    --link-color: #1e66f5;
+    --post-card-color: #ccd0da;
+    --subtext-color: #5c5f77;
 }
 
 header {
@@ -37,7 +63,7 @@ main {
 h1.page-title {
     color: var(--page-color);
     font-size: 3em; 
-    font-weight: bold; 
+    font-weight: 600; 
     margin-bottom: 20px;
 }
 a {
@@ -65,12 +91,7 @@ a {
     z-index: 1000; /* Ensure the navbar is above other content */
 }
 
-.navbar-brand a {
-    color: var(--title-color);
-    text-decoration: none;
-    font-size: var(--title-font-size);
-    font-weight: semi-bold;
-}
+
 .nav-menu {
     display: flex;
     align-items: center;
@@ -88,7 +109,7 @@ a {
 }
 
 .navbar-links ul li a {
-    color: #f2cdcd;
+    color: var(--nav-menu-color);
     text-decoration: none;
     font-weight: semi-bold;
     font-size: 20px;
@@ -113,20 +134,17 @@ a {
     width: 20px; 
     left: 50%;
 }
-.nav-link-1 {
-    --after-color: #ff6f61; 
-}
 
 .nav-link-2 {
-    --after-color: #fab387; 
+    --after-color: var(--nav-link-1-color); 
 }
 
 .nav-link-3 {
-    --after-color: #a6e3a1; 
+    --after-color: var(--nav-link-2-color); 
 }
 
 .nav-link-4 {
-    --after-color: #b4befe; 
+    --after-color: var(--nav-link-3-color); 
 }
 
 .navbar-toggle {
@@ -136,7 +154,7 @@ a {
 }
 
 .navbar-toggle span {
-    background-color: #f5e0dc;
+    background-color: var(--nav-menu-color);
     height: 3px;
     margin: 4px 0;
     width: 25px;
@@ -197,7 +215,7 @@ footer {
 }
 
 .hero-text p.hero-hello {
-    background: linear-gradient(to right, #f5e0dc, #cba6f7);
+    background: linear-gradient(to right, var(--hero-gradient-1), var(--hero-gradient-2));
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -294,11 +312,11 @@ footer {
 }
 
 blockquote {
-    background-color: #181825;
-    border-left: 10px solid #11111b;
+    background-color: var(--mantle-color);
+    border-left: 10px solid var(--crust-color);
     margin: 1.5em 10px;
     padding: 0.5em 10px;
-    color: #fab387;
+    color: var(--nav-link-1-color);
 }
 
 blockquote p {
@@ -306,13 +324,13 @@ blockquote p {
 }
 
 blockquote strong {
-    color: #e78284;
+    color: var(--strong-quote-color);
 }
 
 
 #search-icon {
     font-size: 20px;
-    color: #f2cdcd;
+    color: var(--nav-menu-color);
     cursor: pointer;
     margin-right: 20px;
     position: relative; /* Needed for the ::after element */
@@ -325,7 +343,7 @@ blockquote strong {
     left: 50%;
     width: 0;
     height: 4px;
-    background-color: #89b4fa; 
+    background-color: var(--link-color); 
     transition: width 0.3s ease-in-out, left 0.3s ease-in-out; 
     transform: translateX(-50%);
 }
@@ -347,18 +365,18 @@ pre::-webkit-scrollbar {
 }
 
 pre::-webkit-scrollbar-thumb {
-    background-color: #89b4fa; /* Color of the scrollbar thumb */
+    background-color: var(--link-color); /* Color of the scrollbar thumb */
     border-radius: 6px; /* Roundness of the scrollbar thumb */
-    border: 3px solid #1e1e2e; /* Padding around the scrollbar thumb */
+    border: 3px solid var(--background-color); /* Padding around the scrollbar thumb */
 }
 
 pre::-webkit-scrollbar-track {
-    background-color: #181825; /* Color of the scrollbar track */
+    background-color: var(--mantle-color); /* Color of the scrollbar track */
     border-radius: 6px; /* Roundness of the scrollbar track */
 }
 
 /* Style the scrollbar for Firefox */
 pre {
     scrollbar-width: thin; /* Width of the scrollbar */
-    scrollbar-color: #89b4fa #181825; /* Color of the scrollbar thumb and track */
+    scrollbar-color: var(--link-color) var(--mantle-color); /* Color of the scrollbar thumb and track */
 }

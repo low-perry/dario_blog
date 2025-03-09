@@ -6,8 +6,8 @@
 
 
 .post-card {
-    background-color: #313244;
-    border: 1px solid #f5e0dc;
+    background-color: var(post-card-color);
+    border: 1px solid var(--hero-gradient-1);
     border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     padding: 20px;
@@ -17,7 +17,7 @@
 }
 .post-card:hover {
     transform: scale(1.05); /* Expand the card on hover */
-    border-color: #cba6f7; /* Change border color on hover */
+    border-color: var(--hero-gradient-2); /* Change border color on hover */
 }
 
 .post-card h2 {
@@ -25,7 +25,7 @@
 }
 
 .post-card .post-date {
-    color: #bac2de;
+    color: var(--subtext-color);
     font-size: 0.9em;
 }
 
