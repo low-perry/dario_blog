@@ -13,6 +13,10 @@
     --link-color: #89b4fa;
     --post-card-color: #313244;
     --subtext-color: #bac2de;
+    --string-yellow: #f9e2af;
+    --primitive-sapphire: #74c7ec;
+    --inline-code: #ca9ee6;
+    --punct-orange: #fab387;
     --title-font-size: 32px;
     --font-family: 'Inter', sans-serif;
     --main-padding: 20px;
@@ -35,6 +39,10 @@
     --link-color: #1e66f5;
     --post-card-color: #ccd0da;
     --subtext-color: #5c5f77;
+    --string-yellow: #df8e1d;
+    --primitive-sapphire: #209fb5;
+    --inline-code: #8839ef;
+    --punct-orange: #fe640b;
 }
 
 header {
