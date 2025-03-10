@@ -212,6 +212,7 @@ footer {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    height: 100vh; 
 }
 .hero-text, .hero-logo {
     width: 50%;
@@ -298,6 +299,7 @@ footer {
 
     .hero-container {
         flex-direction: column;
+        height: auto;
     }
 
     .hero-text p.hero-hello {
