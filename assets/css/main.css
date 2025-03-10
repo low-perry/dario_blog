@@ -222,6 +222,7 @@ footer {
     align-items: center;
 }
 
+
 .hero-text p.hero-hello {
     background: linear-gradient(to right, var(--hero-gradient-1), var(--hero-gradient-2));
     background-clip: text;
@@ -238,23 +239,12 @@ footer {
     color: var(--text-color);
 }
 
-@keyframes spin {
-    from {
-        transform: rotate(0deg);
-    }
-    to {
-        transform: rotate(360deg);
-    }
-}
+
 
 .hero-logo img {
-    height: 250px;
+    height: 400px;
     width: auto;
     transition: transform 0.5s ease-in-out;
-}
-
-.hero-logo img:hover {
-    animation: spin 2s linear infinite;
 }
 
 
