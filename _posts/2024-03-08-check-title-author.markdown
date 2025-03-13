@@ -1,5 +1,5 @@
 ---
-layout: page
+layout: blog-post
 title:  Beyonce Knowles
 author: Kevan Hudson
 date: 2025-03-08 01:05:33 +0100

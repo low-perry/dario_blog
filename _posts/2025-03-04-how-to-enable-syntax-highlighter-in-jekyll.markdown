@@ -1,5 +1,5 @@
 ---
-layout: page
+layout: blog-post
 title:  "How to enable code syntax highlighter in Jekyll!"
 author: Dario Haxhiraj
 date:   2025-03-04 18:13:33 +0100

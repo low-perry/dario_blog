@@ -1,5 +1,5 @@
 ---
-layout: page
+layout: blog-post
 title: Kerouac like frenzy
 author: Dario Haxhiraj
 date: 2025-03-07 23:45:33 +0100

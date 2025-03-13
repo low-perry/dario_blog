@@ -1,5 +1,5 @@
 ---
-layout: page
+layout: blog-post
 title:  "Creating your own Jekyll syntax highlighting theme"
 author: Dario Haxhiraj
 date: 2025-03-05 17:45:33 +0100

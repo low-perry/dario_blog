@@ -1,5 +1,5 @@
 ---
-layout: page
+layout: blog-post
 title:  About me
 author: Dario Haxhiraj
 date: 2025-03-08 01:17:33 +0100
