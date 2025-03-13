@@ -47,7 +47,15 @@ document.addEventListener("DOMContentLoaded", function() {
             link.classList.add('active');
         }
     });
-
+// Prevent space key from scrolling the page
+document.addEventListener('keydown', function(event) {
+    // Check if the key pressed is the space key (keyCode 32)
+    if (event.code === 'Space') {
+      // Prevent the default action (scrolling)
+      event.preventDefault();
+      return false;
+    }
+  });
 
 });
 
