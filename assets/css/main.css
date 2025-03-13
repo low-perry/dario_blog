@@ -380,3 +380,9 @@ pre {
     scrollbar-width: thin; /* Width of the scrollbar */
     scrollbar-color: var(--link-color) var(--mantle-color); /* Color of the scrollbar thumb and track */
 }
+#canvas-container {
+    width: 800px;
+    height: 600px;
+    margin: 0 auto; /* Center container */
+    border: 1px solid #ccc;
+  }
