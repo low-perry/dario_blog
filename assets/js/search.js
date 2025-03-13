@@ -15,7 +15,7 @@
                 const item = store[results[i].ref];
                 appendString += '<li><a href="' + item.url + '" style="display: block; text-decoration: none; color: inherit;">';
                 appendString += '<span class="post-meta">' + item.date + '</span><h2>' + item.title + '</h2>';
-                appendString += '<p class="small">' + decodeURI(item.content).substring(0, 100) + '...</p>';
+                appendString += '<p class="small">' + item.content.substring(0, 100) + '...</p>';
                 appendString += '</a></li>';
             }
 
@@ -40,7 +40,7 @@
                     'title': window.store[key].title,
                     'author': window.store[key].author,
                     'category': window.store[key].category,
-                    'content': decodeURI(window.store[key].content)
+                    'content': window.store[key].content
                 });
             }
             console.log('idx created');
