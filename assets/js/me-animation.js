@@ -72,13 +72,13 @@ const skyboxTexture = cubeTextureLoader.load([
 scene.background = skyboxTexture; */
 
 // Create a TextureLoader
-const textureLoader = new THREE.TextureLoader();
+/* const textureLoader = new THREE.TextureLoader();
 
 // Load the background image
 const backgroundTexture = textureLoader.load(backgroundUrl);
 
 // Set the background of your scene to the loaded texture
-scene.background = backgroundTexture
+scene.background = backgroundTexture */
 
 // --------------------------
 // 2. Load GLTF Models
