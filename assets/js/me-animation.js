@@ -243,8 +243,8 @@ function initiateAstronautJump() {
 // --------------------------
 let isWiggling = false;
 let wiggleStartTime = 0;
-const wiggleDuration = 1; // Duration in seconds
-const wiggleFrequency = 20; // Higher = faster oscillation
+const wiggleDuration = 0.8; // Duration in seconds
+const wiggleFrequency = 15; // Higher = faster oscillation
 const wiggleAmplitude = 0.5; // Higher = more intense wiggle
 
 // Modify the animate function to include the wiggle effect
