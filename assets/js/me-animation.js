@@ -1,6 +1,7 @@
 import * as THREE from "three";
 import { GLTFLoader } from "jsm/loaders/GLTFLoader.js";
 import { OrbitControls } from "jsm/controls/OrbitControls.js";
+import getStarfield from "./starfield.js";
 
 const container = document.getElementById('canvas-container');
 const moonUrl = container.dataset.moonUrl;
@@ -79,6 +80,8 @@ const backgroundTexture = textureLoader.load(backgroundUrl);
 
 // Set the background of your scene to the loaded texture
 scene.background = backgroundTexture */
+const starfield = getStarfield({ numStars: 5000 });
+scene.add(starfield);
 
 // --------------------------
 // 2. Load GLTF Models
