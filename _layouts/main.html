@@ -1,81 +1,111 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>{{ page.title }}</title>
-    <link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}">
-    <link rel="stylesheet" href="{{ '/assets/css/syntax.css' | relative_url }}">
-    <link rel="stylesheet" href="{{ '/assets/css/posts.css' | relative_url }}">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <link rel="stylesheet" href="{{ '/assets/css/modal.css' | relative_url }}">
-    <link rel="stylesheet" href="{{ '/assets/css/help-modal.css' | relative_url }}">
-    <link rel="icon" href="{{ '/assets/images/favicon.ico' | relative_url }}" type="image/x-icon">
+    <link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}" />
+    <link
+      rel="stylesheet"
+      href="{{ '/assets/css/syntax.css' | relative_url }}"
+    />
+    <link
+      rel="stylesheet"
+      href="{{ '/assets/css/posts.css' | relative_url }}"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="{{ '/assets/css/modal.css' | relative_url }}"
+    />
+    <link
+      rel="stylesheet"
+      href="{{ '/assets/css/help-modal.css' | relative_url }}"
+    />
+    <link
+      rel="icon"
+      href="{{ '/assets/images/favicon.ico' | relative_url }}"
+      type="image/x-icon"
+    />
     <style>
-        :root {
-            --page-color: {{ page.color }};
-        }
+      :root {
+          --page-color: {{ page.color }};
+      }
     </style>
     <script>
-        
-        // Apply the saved theme before the page loads
-        (function() {
-            const savedTheme = localStorage.getItem('theme');
-            if (savedTheme) {
-                document.documentElement.classList.add(savedTheme);
-            }
-        })();
+      // Apply the saved theme before the page loads
+      (function () {
+        const savedTheme = localStorage.getItem("theme");
+        if (savedTheme) {
+          document.documentElement.classList.add(savedTheme);
+        }
+      })();
     </script>
-</head>
-<body>
+    <script type="importmap">
+      {
+        "imports": {
+          "three": "https://cdn.jsdelivr.net/npm/three@0.161.0/build/three.module.js",
+          "jsm/": "https://cdn.jsdelivr.net/npm/three@0.161.0/examples/jsm/"
+        }
+      }
+    </script>
+  </head>
+  <body>
     {% include header.html %}
-    <main>
-        {{ content }}
-    </main>
-    {% include search-modal.html %}
-    {% include help-modal.html %}
-    {% include footer.html %}
+    <main>{{ content }}</main>
+    {% include search-modal.html %} {% include help-modal.html %} {% include
+    footer.html %}
     <script>
-        // Function to apply the saved theme
-        function applySavedTheme() {
-            const savedTheme = localStorage.getItem('theme');
-            if (savedTheme) {
-                document.documentElement.classList.add(savedTheme);
-                updateThemeIcon(savedTheme);
-            } else {
-                updateThemeIcon('dark-mode');
-            }
+      // Function to apply the saved theme
+      function applySavedTheme() {
+        const savedTheme = localStorage.getItem("theme");
+        if (savedTheme) {
+          document.documentElement.classList.add(savedTheme);
+          updateThemeIcon(savedTheme);
+        } else {
+          updateThemeIcon("dark-mode");
         }
+      }
 
-        // Function to update the theme icon
-        function updateThemeIcon(theme) {
-            const themeIcon = document.getElementById('theme-icon');
-            if (theme === 'light-mode') {
-                themeIcon.classList.remove('fa-moon');
-                themeIcon.classList.add('fa-sun');
-            } else {
-                themeIcon.classList.remove('fa-sun');
-                themeIcon.classList.add('fa-moon');
-            }
+      // Function to update the theme icon
+      function updateThemeIcon(theme) {
+        const themeIcon = document.getElementById("theme-icon");
+        if (theme === "light-mode") {
+          themeIcon.classList.remove("fa-moon");
+          themeIcon.classList.add("fa-sun");
+        } else {
+          themeIcon.classList.remove("fa-sun");
+          themeIcon.classList.add("fa-moon");
         }
+      }
 
-        // Apply the saved theme on page load
-        applySavedTheme();
+      // Apply the saved theme on page load
+      applySavedTheme();
 
-        // Toggle theme and save preference to localStorage
-        document.getElementById('theme-icon').addEventListener('click', function() {
-            document.documentElement.classList.toggle('light-mode');
-            if (document.documentElement.classList.contains('light-mode')) {
-                localStorage.setItem('theme', 'light-mode');
-                updateThemeIcon('light-mode');
-            } else {
-                localStorage.removeItem('theme');
-                updateThemeIcon('dark-mode');
-            }
+      // Toggle theme and save preference to localStorage
+      document
+        .getElementById("theme-icon")
+        .addEventListener("click", function () {
+          document.documentElement.classList.toggle("light-mode");
+          if (document.documentElement.classList.contains("light-mode")) {
+            localStorage.setItem("theme", "light-mode");
+            updateThemeIcon("light-mode");
+          } else {
+            localStorage.removeItem("theme");
+            updateThemeIcon("dark-mode");
+          }
         });
     </script>
     <script src="{{ '/assets/js/main.js' | relative_url }}"></script>
     <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" async></script>
 </body>
+    <script src="{{ '/assets/js/me-animation.js' | relative_url }}" type="module"></script>
+  </body>
 </html>

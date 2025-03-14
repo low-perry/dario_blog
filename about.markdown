@@ -4,8 +4,14 @@ title: Me
 permalink: /me/
 color: rgb(250, 179, 135)
 ---
+<div id="canvas-container" 
+     data-moon-url="{{ '/assets/3DObjects/moon.glb' | relative_url }}"
+     data-astronaut-url="{{ '/assets/3DObjects/astropink.glb' | relative_url }}" >
+</div>
 
-If my social media presence has ever spoken some truth about me, is that me and the "about me" sections, have been on a [philosophical conflict ]({{ '/blog/about-me' | relative_url }}) for as long as my digital footprint has existed. (My first one ever being \*describes who he is\* and the last one being "Why is it always Bios?")
+If my social media presence has ever revealed a truth about me, it's that "about me" sections and I have been in a philosophical conflict for as long as my digital footprint has existed. (My first one ever was "\*describes who he is\*", and the latest being, "Why is it always Bios?")
+
+
 
 
 My name is Dario.

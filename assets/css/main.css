@@ -1,382 +1,498 @@
 :root {
-    --background-color: #1e1e2e;
-    --text-color:  #cdd6f4;
-    --mantle-color: #181825;
-    --crust-color: #11111b;
-    --nav-menu-color: #f2cdcd;
-    --nav-link-1-color: #fab387;
-    --nav-link-2-color: #a6e3a1;
-    --nav-link-3-color:  #b4befe;
-    --hero-gradient-1: #f5e0dc;
-    --hero-gradient-2: #cba6f7;
-    --strong-quote-color: #e78284;
-    --link-color: #89b4fa;
-    --post-card-color: #313244;
-    --subtext-color: #bac2de;
-    --string-yellow: #f9e2af;
-    --primitive-sapphire: #74c7ec;
-    --inline-code: #ca9ee6;
-    --punct-orange: #fab387;
-    --title-font-size: 32px;
-    --font-family: 'Inter', sans-serif;
-    --main-padding: 20px;
-    --main-margin: 20px;
-    --main-font-size: 18px;
+  --background-color: #1e1e2e;
+  --text-color: #cdd6f4;
+  --mantle-color: #181825;
+  --crust-color: #11111b;
+  --nav-menu-color: #f2cdcd;
+  --nav-link-1-color: #fab387;
+  --nav-link-2-color: #a6e3a1;
+  --nav-link-3-color: #b4befe;
+  --hero-gradient-1: #f5e0dc;
+  --hero-gradient-2: #cba6f7;
+  --strong-quote-color: #e78284;
+  --link-color: #89b4fa;
+  --post-card-color: #313244;
+  --subtext-color: #bac2de;
+  --string-yellow: #f9e2af;
+  --primitive-sapphire: #74c7ec;
+  --inline-code: #ca9ee6;
+  --punct-orange: #fab387;
+  --logo-red: #f38ba8;
+  --logo-blue: #89b4fa;
+  --logo-yellow: #f9e2af;
+  --logo-pink: #f5c2e7;
+  --logo-lavender: #b4befe;
+  --title-font-size: 32px;
+  --font-family: "Inter", sans-serif;
+  --main-padding: 20px;
+  --main-margin: 20px;
+  --main-font-size: 18px;
 }
 
 .light-mode {
-    --background-color: #eff1f5;
-    --text-color: #4c4f69;
-    --mantle-color: #e6e9ef;
-    --crust-color: #dce0e8;
-    --nav-menu-color: #dd7878;
-    --nav-link-1-color: #fe640b;
-    --nav-link-2-color: #40a02b;
-    --nav-link-3-color: #7287fd;
-    --hero-gradient-1: #dc8a78;
-    --hero-gradient-2:  #8839ef;
-    --strong-quote-color: #d20f39;
-    --link-color: #1e66f5;
-    --post-card-color: #ccd0da;
-    --subtext-color: #5c5f77;
-    --string-yellow: #df8e1d;
-    --primitive-sapphire: #209fb5;
-    --inline-code: #8839ef;
-    --punct-orange: #fe640b;
+  --background-color: #eff1f5;
+  --text-color: #4c4f69;
+  --mantle-color: #e6e9ef;
+  --crust-color: #dce0e8;
+  --nav-menu-color: #dd7878;
+  --nav-link-1-color: #fe640b;
+  --nav-link-2-color: #40a02b;
+  --nav-link-3-color: #7287fd;
+  --hero-gradient-1: #dc8a78;
+  --hero-gradient-2: #8839ef;
+  --strong-quote-color: #d20f39;
+  --link-color: #1e66f5;
+  --post-card-color: #ccd0da;
+  --subtext-color: #5c5f77;
+  --string-yellow: #df8e1d;
+  --primitive-sapphire: #209fb5;
+  --inline-code: #8839ef;
+  --punct-orange: #fe640b;
+  --logo-red: #d20f39;
+  --logo-yellow: #df8e1d;
+  --logo-blue: #1e66f5;
+  --logo-pink: #ea76cb;
+  --logo-lavender: #7287fd;
 }
 
 header {
-    background-color: var(--mantle-color);
-    padding: 10px 0;
+  background-color: var(--mantle-color);
+  padding: 10px 0;
 }
 
-html, body {
-    height: 100%;
-    margin: 0;
-    display: flex;
-    flex-direction: column;
+html,
+body {
+  height: 100%;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
 }
 
 body {
-    background-color: var(--background-color);
-    color: var(--text-color);
-    font-family: var(--font-family);
-    flex: 1;
+  background-color: var(--background-color);
+  color: var(--text-color);
+  font-family: var(--font-family);
+  flex: 1;
 }
 
 main {
-    font-size: var(--main-font-size);
+  font-size: var(--main-font-size);
 }
 
 h1.page-title {
-    color: var(--page-color);
-    font-size: 3em; 
-    font-weight: 600; 
-    margin-bottom: 20px;
+  color: var(--page-color);
+  font-size: 3em;
+  font-weight: 600;
+  margin-bottom: 20px;
 }
 a {
-    color: var(--link-color);
-    text-decoration: none;
+  color: var(--link-color);
+  text-decoration: none;
 }
 .page-container {
-    margin: 0 auto;
-    max-width: 900px;
-    padding: 20px;
-    overflow-wrap: break-word;
+  margin: 0 auto;
+  max-width: 900px;
+  padding: 20px;
+  overflow-wrap: break-word;
 }
 
 .navbar {
-    position: fixed; /* Make the navbar sticky */
-    top: 0;
-    left: 0;
-    right: 0;
-    background-color: var(--mantle-color);
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin: 0 0;
-    padding: 0 20px;
-    z-index: 1000; /* Ensure the navbar is above other content */
+  position: fixed; /* Make the navbar sticky */
+  top: 0;
+  left: 0;
+  right: 0;
+  background-color: var(--mantle-color);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 0;
+  padding: 0 20px;
+  z-index: 1000; /* Ensure the navbar is above other content */
 }
 
-
 .nav-menu {
-    display: flex;
-    align-items: center;
+  display: flex;
+  align-items: center;
 }
 
 .navbar-links ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    display: flex;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
 }
 
 .navbar-links ul li {
-    margin-left: 20px;
+  margin-left: 20px;
 }
 
 .navbar-links ul li a {
-    color: var(--nav-menu-color);
-    text-decoration: none;
-    font-weight: semi-bold;
-    font-size: 20px;
-    position: relative;
-    transition: color 0.3s ease-in-out;
+  color: var(--nav-menu-color);
+  text-decoration: none;
+  font-weight: semi-bold;
+  font-size: 20px;
+  position: relative;
+  transition: color 0.3s ease-in-out;
 }
 
 .navbar-links ul li a::after {
-    content: '';
-    position: absolute;
-    bottom: -5px; 
-    left: 50%;
-    width: 0;
-    height: 4px; 
-    background-color: var(--after-color); 
-    transition: width 0.3s ease-in-out, left 0.3s ease-in-out; 
-    transform: translateX(-50%);
+  content: "";
+  position: absolute;
+  bottom: -5px;
+  left: 50%;
+  width: 0;
+  height: 4px;
+  background-color: var(--after-color);
+  transition: width 0.3s ease-in-out, left 0.3s ease-in-out;
+  transform: translateX(-50%);
 }
 
 .navbar-links ul li a:hover::after,
 .navbar-links ul li a.active::after {
-    width: 20px; 
-    left: 50%;
+  width: 20px;
+  left: 50%;
 }
 
 .nav-link-2 {
-    --after-color: var(--nav-link-1-color); 
+  --after-color: var(--nav-link-1-color);
 }
 
 .nav-link-3 {
-    --after-color: var(--nav-link-2-color); 
+  --after-color: var(--nav-link-2-color);
 }
 
 .nav-link-4 {
-    --after-color: var(--nav-link-3-color); 
+  --after-color: var(--nav-link-3-color);
 }
 
 .navbar-toggle {
-    display: none;
-    flex-direction: column;
-    cursor: pointer;
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
 }
 
 .navbar-toggle span {
-    background-color: var(--nav-menu-color);
-    height: 3px;
-    margin: 4px 0;
-    width: 25px;
+  background-color: var(--nav-menu-color);
+  height: 3px;
+  margin: 4px 0;
+  width: 25px;
 }
 
 main {
-    flex: 1;
-    padding: var(--main-padding);
-    margin: var(--main-margin);
+  flex: 1;
+  padding: var(--main-padding);
+  margin: var(--main-margin);
 }
 
 footer {
-    background-color: var(--mantle-color);
-    padding: 20px;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
+  background-color: var(--mantle-color);
+  padding: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
 }
 
 .footer-section {
-    flex: 1;
-    margin: 10px;
-    min-width: 200px;
+  flex: 1;
+  margin: 10px;
+  min-width: 200px;
 }
 
 .footer-section h3 {
-    margin-bottom: 10px;
+  margin-bottom: 10px;
 }
 
 .footer-section ul {
-    list-style-type: none;
-    padding: 0;
+  list-style-type: none;
+  padding: 0;
 }
 
 .social-media {
-    list-style-type: none;
-    padding: 0;
-    display: flex;
+  list-style-type: none;
+  padding: 0;
+  display: flex;
 }
 
 .social-media li {
-    margin: 0 10px 0 0;
+  margin: 0 10px 0 0;
 }
 
 /* Hero section */
 .hero-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    height: 100vh; 
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 100vh;
 }
-.hero-text, .hero-logo {
-    width: 50%;
+.hero-text,
+.hero-logo {
+  width: 50%;
 }
 .hero-logo {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
-
 
 .hero-text p.hero-hello {
-    background: linear-gradient(to right, var(--hero-gradient-1), var(--hero-gradient-2));
-    background-clip: text;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    font-size: 50px;
-    font-weight: bold;
-    margin-top: 30px;
-    margin-bottom: 30px;
+  background: linear-gradient(
+    to right,
+    var(--hero-gradient-1),
+    var(--hero-gradient-2)
+  );
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-size: 50px;
+  font-weight: bold;
+  margin-top: 30px;
+  margin-bottom: 30px;
 }
 .hero-text p.hero-welcome {
-    font-size: 20px; 
-    font-weight: bold;
-    color: var(--text-color);
+  font-size: 20px;
+  font-weight: bold;
+  color: var(--text-color);
 }
-
-
 
 .hero-logo img {
-    height: 400px;
-    width: auto;
-    transition: transform 0.5s ease-in-out;
+  height: 400px;
+  width: auto;
+  transition: transform 0.5s ease-in-out;
 }
-
-
-
-
 
 /* Responsive styles */
 @media (max-width: 768px) {
-    .navbar-links {
-        position: fixed;
-        top: 60px;
-        left: 0;
-        right: 0;
-        background-color: var(--mantle-color);
-        display: none;
-        flex-direction: column;
-        width: 100%;
-        z-index: 1000;
-    }
+  .navbar-links {
+    position: fixed;
+    top: 60px;
+    left: 0;
+    right: 0;
+    background-color: var(--mantle-color);
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    z-index: 1000;
+  }
 
-    .navbar-links ul {
-        flex-direction: column;
-        width: 100%;
-    }
+  .navbar-links ul {
+    flex-direction: column;
+    width: 100%;
+  }
 
-    .navbar-links ul li {
-        margin: 10px 0;
-        text-align: center;
-    }
+  .navbar-links ul li {
+    margin: 10px 0;
+    text-align: center;
+  }
 
-    .navbar-toggle {
-        display: flex;
-    }
+  .navbar-toggle {
+    display: flex;
+  }
 
-    .navbar-links.active {
-        display: flex;
-    }
-    footer {
-        flex-direction: column;
-        align-items: center;
-    }
+  .navbar-links.active {
+    display: flex;
+  }
+  footer {
+    flex-direction: column;
+    align-items: center;
+  }
 
-    .footer-section {
-        margin: 10px 0;
-        text-align: center;
-    }
-    
-    .social-media {
-        justify-content: center;
-    }
+  .footer-section {
+    margin: 10px 0;
+    text-align: center;
+  }
 
-    .hero-container {
-        flex-direction: column;
-        height: auto;
-    }
+  .social-media {
+    justify-content: center;
+  }
 
-    .hero-text p.hero-hello {
-        font-size: 30px;
-    }
+  .hero-container {
+    flex-direction: column;
+    height: auto;
+  }
+  .hero-text,
+  .hero-logo {
+    width: 100%;
+    text-align: left;
+  }
 
-    .dropdown-active {
-        margin-top: 135px; 
-    }
+  .hero-text p.hero-hello {
+    font-size: 30px;
+  }
+
+  .dropdown-active {
+    margin-top: 135px;
+  }
 }
 
 blockquote {
-    background-color: var(--mantle-color);
-    border-left: 10px solid var(--crust-color);
-    margin: 1.5em 10px;
-    padding: 0.5em 10px;
-    color: var(--nav-link-1-color);
+  background-color: var(--mantle-color);
+  border-left: 10px solid var(--crust-color);
+  margin: 1.5em 10px;
+  padding: 0.5em 10px;
+  color: var(--nav-link-1-color);
 }
 
 blockquote p {
-    margin: 0;
+  margin: 0;
 }
 
 blockquote strong {
-    color: var(--strong-quote-color);
+  color: var(--strong-quote-color);
 }
 
-
-#search-icon, #theme-icon {
-    font-size: 20px;
-    color: var(--nav-menu-color);
-    cursor: pointer;
-    margin-right: 20px;
-    position: relative; /* Needed for the ::after element */
+#search-icon,
+#theme-icon {
+  font-size: 20px;
+  color: var(--nav-menu-color);
+  cursor: pointer;
+  margin-right: 20px;
+  position: relative; /* Needed for the ::after element */
 }
 
 #search-icon::after {
-    content: '';
-    position: absolute;
-    bottom: -5px; 
-    left: 50%;
-    width: 0;
-    height: 4px;
-    background-color: var(--link-color); 
-    transition: width 0.3s ease-in-out, left 0.3s ease-in-out; 
-    transform: translateX(-50%);
+  content: "";
+  position: absolute;
+  bottom: -5px;
+  left: 50%;
+  width: 0;
+  height: 4px;
+  background-color: var(--link-color);
+  transition: width 0.3s ease-in-out, left 0.3s ease-in-out;
+  transform: translateX(-50%);
 }
 
 #search-icon:hover::after {
-    width: 20px; 
-    left: 50%;
+  width: 20px;
+  left: 50%;
 }
 
 pre {
-    overflow-x: scroll;
-    /* Style the scrollbar for WebKit browsers (Chrome, Safari) */
-    -webkit-overflow-scrolling: touch; /* Optional: smooth scrolling on iOS */
+  overflow-x: scroll;
+  /* Style the scrollbar for WebKit browsers (Chrome, Safari) */
+  -webkit-overflow-scrolling: touch; /* Optional: smooth scrolling on iOS */
 }
 
 pre::-webkit-scrollbar {
-    width: 12px; /* Width of the scrollbar */
-    height: 12px; /* Height of the scrollbar */
+  width: 12px; /* Width of the scrollbar */
+  height: 12px; /* Height of the scrollbar */
 }
 
 pre::-webkit-scrollbar-thumb {
-    background-color: var(--link-color); /* Color of the scrollbar thumb */
-    border-radius: 6px; /* Roundness of the scrollbar thumb */
-    border: 3px solid var(--background-color); /* Padding around the scrollbar thumb */
+  background-color: var(--link-color); /* Color of the scrollbar thumb */
+  border-radius: 6px; /* Roundness of the scrollbar thumb */
+  border: 3px solid var(--background-color); /* Padding around the scrollbar thumb */
 }
 
 pre::-webkit-scrollbar-track {
-    background-color: var(--mantle-color); /* Color of the scrollbar track */
-    border-radius: 6px; /* Roundness of the scrollbar track */
+  background-color: var(--mantle-color); /* Color of the scrollbar track */
+  border-radius: 6px; /* Roundness of the scrollbar track */
 }
 
 /* Style the scrollbar for Firefox */
 pre {
-    scrollbar-width: thin; /* Width of the scrollbar */
-    scrollbar-color: var(--link-color) var(--mantle-color); /* Color of the scrollbar thumb and track */
+  scrollbar-width: thin; /* Width of the scrollbar */
+  scrollbar-color: var(--link-color) var(--mantle-color); /* Color of the scrollbar thumb and track */
+}
+
+#canvas-container {
+  width: 100%;
+  height: 70vh;
+}
+
+/* Logo animations */
+/* Base styles for animation */
+.navbar-brand svg {
+  transition: transform 0.3s ease;
+}
+
+/* Whole logo hover effect */
+.navbar-brand:hover svg {
+  transform: scale(1.05);
+}
+
+/* Star twinkling animation */
+@keyframes twinkle-multicolor {
+  0% {
+    fill: var(--logo-yellow);
+    filter: brightness(1);
+  }
+  33% {
+    fill: var(--logo-blue);
+    filter: brightness(1.2);
+  }
+  66% {
+    fill: var(--logo-pink);
+    filter: brightness(1.3);
+  }
+  100% {
+    fill: var(--logo-yellow);
+    filter: brightness(1);
+  }
+}
+
+/* Moon glow animation */
+@keyframes glow {
+  0% {
+    filter: drop-shadow(0 0 0px var(--logo-yellow));
+  }
+  50% {
+    filter: drop-shadow(0 0 3px var(--logo-yellow));
+  }
+  100% {
+    filter: drop-shadow(0 0 0px var(--logo-yellow));
+  }
+}
+
+/* Antenna animation */
+
+@keyframes antenna-color-change {
+  0% {
+    fill: var(--logo-red);
+  }
+  45% {
+    fill: var(--logo-red);
+  }
+  50% {
+    fill: var(--nav-link-2-color);
+  } /* Green */
+  95% {
+    fill: var(--nav-link-2-color);
+  }
+  100% {
+    fill: var(--logo-red);
+  }
+}
+
+/* Apply animations on hover */
+.navbar-brand:hover .star-1 {
+  animation: twinkle-multicolor 3s infinite;
+  animation-delay: 0.1s;
+}
+.navbar-brand:hover .star-2 {
+  animation: twinkle-multicolor 3s infinite;
+  animation-delay: 0.8s;
+}
+.navbar-brand:hover .star-3 {
+  animation: twinkle-multicolor 3s infinite;
+  animation-delay: 1.5s;
+}
+.navbar-brand:hover .star-4 {
+  animation: twinkle-multicolor 3s infinite;
+  animation-delay: 0.3s;
+}
+.navbar-brand:hover .star-5 {
+  animation: twinkle-multicolor 3s infinite;
+  animation-delay: 1.2s;
+}
+.navbar-brand:hover .star-6 {
+  animation: twinkle-multicolor 3s infinite;
+  animation-delay: 2.1s;
+}
+
+.navbar-brand:hover .moon {
+  animation: glow 3s infinite;
+}
+
+.navbar-brand:hover .antena-ball {
+  animation: antenna-color-change 2s infinite, glow 2s infinite;
 }
