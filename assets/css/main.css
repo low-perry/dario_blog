@@ -301,6 +301,10 @@ footer {
         flex-direction: column;
         height: auto;
     }
+    .hero-text, .hero-logo {
+        width: 100%;
+        text-align: left;
+    }
 
     .hero-text p.hero-hello {
         font-size: 30px;
@@ -380,9 +384,8 @@ pre {
     scrollbar-width: thin; /* Width of the scrollbar */
     scrollbar-color: var(--link-color) var(--mantle-color); /* Color of the scrollbar thumb and track */
 }
+
 #canvas-container {
-    width: 800px;
-    height: 600px;
-    margin: 0 auto; /* Center container */
-    border: 1px solid #ccc;
+    width: 100%;
+    height: 70vh;
   }
