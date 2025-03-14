@@ -90,3 +90,9 @@ f\relax(x) = \int_{-\infty}^\infty
 
 ```
 
+```csharp
+string message = "This is a sample with double curly braces: {% raw %}{{example}}{% endraw %}";
+Console.WriteLine(message);
+```
+
+
