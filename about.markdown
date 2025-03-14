@@ -6,8 +6,7 @@ color: rgb(250, 179, 135)
 ---
 <div id="canvas-container" 
      data-moon-url="{{ '/assets/3DObjects/moon.glb' | relative_url }}"
-     data-astronaut-url="{{ '/assets/3DObjects/astropink.glb' | relative_url }}"
-     data-background-url="{{ '/assets/images/cotton_candy_pink_pastel_clouds.png' | relative_url }}">
+     data-astronaut-url="{{ '/assets/3DObjects/astropink.glb' | relative_url }}" >
 </div>
 
 If my social media presence has ever revealed a truth about me, it's that "about me" sections and I have been in a philosophical conflict for as long as my digital footprint has existed. (My first one ever was "\*describes who he is\*", and the latest being, "Why is it always Bios?")

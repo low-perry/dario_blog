@@ -6,7 +6,6 @@ import getStarfield from "./starfield.js";
 const container = document.getElementById('canvas-container');
 const moonUrl = container.dataset.moonUrl;
 const astronautUrl = container.dataset.astronautUrl;
-const backgroundUrl = container.dataset.backgroundUrl;
 
 
 // Get dimensions from the container instead of window
