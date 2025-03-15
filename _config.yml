@@ -20,11 +20,12 @@
 
 title: Dario
 email: dariohaxhiraj@gmail.com
-description: >- # this means to ignore newlines until "baseurl:"
-  This is my personal blog and my portfolio website.
+description: This is Dario Haxhiraj's personal blog and portfolio website.
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "" # the base hostname & protocol for your site, e.g. http://example.com
 github_username: low-perry
+author: Dario Haxhiraj
+keywords: "programmming, technology, javascript, css, html, java, c#, blog, jekyll, dario, haxhiraj"
 
 # Build settings
 plugins:
@@ -36,6 +37,8 @@ markdown: kramdown
 highlighter: rouge
 kramdown:
   input: GFM
+
+
 
 # Exclude from processing.
 # The following items will not be processed, by default.
