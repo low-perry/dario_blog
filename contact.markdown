@@ -4,6 +4,10 @@ title: Contact
 permalink: /contact/
 color: rgb(180, 190, 254)
 ---
+
+<div class="contact-logo">
+  {% include svg_logo.html %}
+</div>
 <br>
 ### Want to get in touch?
 

@@ -406,7 +406,8 @@ pre {
 }
 
 /* Whole logo hover effect */
-.navbar-brand:hover svg {
+.navbar-brand:hover svg,
+.contact-logo:hover svg {
   transform: scale(1.05);
 }
 
@@ -464,35 +465,54 @@ pre {
 }
 
 /* Apply animations on hover */
-.navbar-brand:hover .star-1 {
+.navbar-brand:hover .star-1,
+.contact-logo:hover .star-1 {
   animation: twinkle-multicolor 3s infinite;
   animation-delay: 0.1s;
 }
-.navbar-brand:hover .star-2 {
+.navbar-brand:hover .star-2,
+.contact-logo:hover .star-2 {
   animation: twinkle-multicolor 3s infinite;
   animation-delay: 0.8s;
 }
-.navbar-brand:hover .star-3 {
+.navbar-brand:hover .star-3,
+.contact-logo:hover .star-3 {
   animation: twinkle-multicolor 3s infinite;
   animation-delay: 1.5s;
 }
-.navbar-brand:hover .star-4 {
+.navbar-brand:hover .star-4,
+.contact-logo:hover .star-4 {
   animation: twinkle-multicolor 3s infinite;
   animation-delay: 0.3s;
 }
-.navbar-brand:hover .star-5 {
+.navbar-brand:hover .star-,
+.contact-logo:hover .star-5 {
   animation: twinkle-multicolor 3s infinite;
   animation-delay: 1.2s;
 }
-.navbar-brand:hover .star-6 {
+.navbar-brand:hover .star-,
+.contact-logo:hover .star-6 {
   animation: twinkle-multicolor 3s infinite;
   animation-delay: 2.1s;
 }
 
-.navbar-brand:hover .moon {
+.navbar-brand:hover .moon,
+.contact-logo:hover .moon {
   animation: glow 3s infinite;
 }
 
-.navbar-brand:hover .antena-ball {
+.navbar-brand:hover .antena-ball,
+.contact-logo:hover .antena-ball {
   animation: antenna-color-change 2s infinite, glow 2s infinite;
+}
+
+.contact-logo {
+  display: flex;
+  justify-content: center;
+  margin: 20px 0;
+}
+
+.contact-logo svg {
+  width: 200px;
+  height: 200px;
 }
