@@ -3,10 +3,9 @@ import { GLTFLoader } from "jsm/loaders/GLTFLoader.js";
 import { OrbitControls } from "jsm/controls/OrbitControls.js";
 import getStarfield from "./starfield.js";
 
-const container = document.getElementById('canvas-container');
+const container = document.getElementById("canvas-container");
 const moonUrl = container.dataset.moonUrl;
 const astronautUrl = container.dataset.astronautUrl;
-
 
 // Get dimensions from the container instead of window
 const w = container.clientWidth;
@@ -33,52 +32,12 @@ controls.dampingFactor = 0.01;
 // Add ambient light for general illumination
 scene.add(new THREE.AmbientLight(0x555555));
 
-// Increase the intensity of the existing point light
-const pointLight1 = new THREE.PointLight(0xffffff, 2);
-pointLight1.position.set(50, 50, 50);
-scene.add(pointLight1);
-
-// Add additional point lights at different positions
-const pointLight2 = new THREE.PointLight(0xffffff, 1.5);
-pointLight2.position.set(-50, 50, 50);
-scene.add(pointLight2);
-
-const pointLight3 = new THREE.PointLight(0xffffff, 1.5);
-pointLight3.position.set(50, -50, 50);
-scene.add(pointLight3);
-
-const pointLight4 = new THREE.PointLight(0xffffff, 1.5);
-pointLight4.position.set(50, 50, -50);
-scene.add(pointLight4);
 
 // Add a directional light for more uniform lighting
 const directionalLight = new THREE.DirectionalLight(0xffffff, 1.5);
 directionalLight.position.set(0, 1, 0);
 scene.add(directionalLight);
 
-//const cubeTextureLoader = new THREE.CubeTextureLoader();
-
-/* // Load the 6 sides of the skybox (you need 6 separate images)
-const skyboxTexture = cubeTextureLoader.load([
-  '../assets/clouds.png',  // positive x
-  '../assets/clouds.png',   // negative x
-  '../assets/clouds.png',    // positive y
-  '../assets/clouds.png', // negative y
-  '../assets/clouds.png',  // positive z
-  '../assets/clouds.png'    // negative z
-]);
-
-// Set the scene background to the skybox
-scene.background = skyboxTexture; */
-
-// Create a TextureLoader
-/* const textureLoader = new THREE.TextureLoader();
-
-// Load the background image
-const backgroundTexture = textureLoader.load(backgroundUrl);
-
-// Set the background of your scene to the loaded texture
-scene.background = backgroundTexture */
 const starfield = getStarfield({ numStars: 5000 });
 scene.add(starfield);
 
@@ -163,9 +122,9 @@ loader.load(
 // --------------------------
 // Two-body orbit parameters.
 const m1 = 5; // Mass for moon1
-const m2 = 3; // Mass for moon2
+const m2 = 5; // Mass for moon2
 let theta = 0; // orbital phase (true anomaly)
-const p = 12; // semi‑latus rectum: controls overall orbit size
+const p = 10; // semi‑latus rectum: controls overall orbit size
 const e = 0.5; // eccentricity of the orbit
 
 // astronaut jumping variables.
@@ -173,7 +132,7 @@ let astronautOnMoon1 = true; // Indicates which body the astronaut is attached t
 let isJumping = false;
 let jumpProgress = 0; // Parameter from 0 to 1 representing jump progress.
 let jumpStart, jumpTarget, jumpControl;
-const jumpSpeed = 0.01; // Increased from 0.005 to make jump 3x faster
+const jumpSpeed = 0.012; // Increased from 0.005 to make jump 3x faster
 const jumpHeight = 12.5; // Slightly increased height for a more dramatic jump
 
 // Add these variables near other state variables
@@ -182,6 +141,9 @@ let rotationProgress = 0;
 const rotationSpeed = 0.017; // Adjust for faster/slower rotation
 let rotationStartQuaternion = new THREE.Quaternion();
 let rotationEndQuaternion = new THREE.Quaternion();
+let isLanding = false;  // Add this new state variable
+let landingTimer = 0;   // Timer to control landing duration
+const landingDuration = 1.0; // How long to stay in landing position (in seconds)
 
 // Trigger the jump when Space is pressed.
 document.addEventListener("keydown", (event) => {
@@ -304,7 +266,9 @@ function animate() {
     if (jumpProgress >= 1) {
       jumpProgress = 1;
       isJumping = false;
-      astronautOnMoon1 = !astronautOnMoon1; // Toggle the attachment on landing.
+      isLanding = true;  // Enter landing state
+      landingTimer = 0;  // Reset timer
+      astronautOnMoon1 = !astronautOnMoon1; // Toggle the attachment on landing
 
       // Start rotation after landing
       isRotating = true;
@@ -346,7 +310,11 @@ function animate() {
     if (astronaut) {
       if (astronautOnMoon1 && moon1) {
         astronaut.position.copy(moon1.position);
-        astronaut.position.y += 3.7;
+        if (isLanding) {
+          astronaut.position.y += 3.5; // Lower value for landing
+        } else {
+          astronaut.position.y += 3.7; // Normal height
+        }
         astronaut.position.z += 1;
         astronaut.position.x += 1;
 
@@ -357,7 +325,11 @@ function animate() {
         }
       } else if (moon2) {
         astronaut.position.copy(moon2.position);
-        astronaut.position.y += 3.7;
+        if (isLanding) {
+          astronaut.position.y += 3.5; // Lower value for landing
+        } else {
+          astronaut.position.y += 3.7; // Normal height
+        }
         astronaut.position.z += 1;
         astronaut.position.x += 1;
 
@@ -386,6 +358,15 @@ function animate() {
     }
   }
 
+    // Update landing state timer
+    if (isLanding) {
+      // Since you don't have a deltaTime, use a fixed time increment (0.016 ≈ 60fps)
+      landingTimer += 0.016;
+      if (landingTimer >= landingDuration) {
+        isLanding = false;
+      }
+    }
+    
   renderer.render(scene, camera);
   controls.update();
 }
@@ -398,7 +379,7 @@ function onWindowResize() {
   // Only update if container size has changed
   const newWidth = container.clientWidth;
   const newHeight = container.clientHeight;
-  
+
   camera.aspect = newWidth / newHeight;
   camera.updateProjectionMatrix();
   renderer.setSize(newWidth, newHeight);
