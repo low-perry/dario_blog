@@ -1,3 +1,8 @@
+{% if include.post %}
+  {% assign words = include.post.content | strip_html | number_of_words %}
+{% else %}
+  {% assign words = content | strip_html | number_of_words %}
+{% endif %}
 {% assign words = content | strip_html | number_of_words %}
 {% assign minutes = words | divided_by: 200.0 %}
 {% assign minutes_rounded = minutes | round %}
@@ -6,7 +11,11 @@
 {% endif %}
 
 <div class="post-meta">
-  <span class="post-date">{{ page.date | date: "%B %-d, %Y" }}</span>
+  {% if include.post %}
+    <span class="post-date">{{ include.post.date | date: "%B %-d, %Y" }}</span>
+  {% else %}
+    <span class="post-date">{{ page.date | date: "%B %-d, %Y" }}</span>
+  {% endif %}
   <span class="post-meta-divider">|</span>
   <span class="reading-time">
     {% include svg-icon.html name="reading" class="reading-icon" %}
