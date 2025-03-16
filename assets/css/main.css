@@ -38,6 +38,7 @@
   --background-color: #1e1e2e;
   --font-family: 'Inter', system-ui, sans-serif;
   --text-color: #cdd6f4;
+  --inverted-text-color: #1e1e2e;
   --mantle-color: #181825;
   --crust-color: #11111b;
   --nav-menu-color: #f2cdcd;
@@ -68,6 +69,7 @@
 .light-mode {
   --background-color: #eff1f5;
   --text-color: #4c4f69;
+  --inverted-text-color: #eff1f5;
   --mantle-color: #e6e9ef;
   --crust-color: #dce0e8;
   --nav-menu-color: #dd7878;
