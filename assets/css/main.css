@@ -517,3 +517,53 @@ pre {
   height: 200px;
 }
 
+.social-icon {
+  width: 16px;
+  height: 16px;
+  margin-right: 0.5rem;
+}
+
+.contact-links {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin: 1.5rem 0;
+}
+
+.contact-link a {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  text-decoration: none;
+  padding: 0.5rem;
+  border-radius: 6px;
+}
+
+
+.social-icon {
+  width: 20px;
+  height: 20px;
+}
+
+/* Update contact page icon styles */
+.contact-link .social-icon {
+  width: 24px;
+  height: 24px;
+  transition: transform 0.2s ease;
+}
+
+.contact-link a:hover .social-icon {
+  transform: scale(1.1);
+}
+
+.search-icon {
+  width: 22px;
+  height: 22px;
+  transition: transform 0.2s ease;
+}
+
+/* Add hover effect */
+.search-icon:hover {
+  transform: scale(1.1);
+  cursor: pointer;
+}
