@@ -45,3 +45,82 @@
         width: 100%; /* 1 post per row on very small screens */
     }
 }
+
+/* Post meta (date and reading time) styling */
+.post-meta {
+    display: flex;
+    align-items: center;
+    margin: -1.2rem 0 2rem 0;
+    font-size: 0.95rem;
+    color: var(--subtext-color);
+  }
+  
+  .post-date {
+    font-weight: 500;
+  }
+  
+  .post-meta-divider {
+    margin: 0 0.6rem;
+    color: var(--subtext-color);
+  }
+  
+  .reading-time {
+    font-style: italic;
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+  }
+  .reading-icon {
+    display: inline-block;
+    vertical-align: -0.125em;
+    margin-right: 0.25rem;
+    fill: var(--subtext-color);
+  }
+
+  .post-header {
+    margin-bottom: 2rem;
+  }
+  
+  /* Adjust top level heading margin when post-meta is present */
+  .post-meta + h1,
+  h1 + .post-meta {
+    margin-bottom: 1rem;
+  }
+
+  /* Breadcrumbs styling */
+.breadcrumbs {
+    margin-bottom: 1.5rem;
+    margin-top: 1rem;
+    font-size: 0.9rem;
+  }
+  
+  .breadcrumbs ol {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-wrap: wrap;
+  }
+  
+  .breadcrumbs li {
+    display: inline-block;
+  }
+  
+  .breadcrumbs li:not(:last-child)::after {
+    content: "/";
+    margin: 0 0.5rem;
+    color: var(--soft-text-color);
+  }
+  
+  .breadcrumbs a {
+    text-decoration: none;
+  }
+  
+  
+  .breadcrumbs li:last-child {
+    color: var(--soft-text-color);
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    max-width: 100px;
+  }
