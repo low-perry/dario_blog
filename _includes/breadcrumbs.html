@@ -1,0 +1,47 @@
+<!-- _includes/breadcrumbs.html -->
+<nav class="breadcrumbs" aria-label="breadcrumb">
+  <ol itemscope itemtype="https://schema.org/BreadcrumbList">
+    <!-- Home link -->
+    <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+      <a itemprop="item" href="{{ '/' | relative_url }}">
+        <span itemprop="name">Home</span>
+      </a>
+      <meta itemprop="position" content="1" />
+    </li>
+    
+    <!-- Blog link -->
+    <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+      <a itemprop="item" href="{{ '/blog/' | relative_url }}">
+        <span itemprop="name">Blog</span>
+      </a>
+      <meta itemprop="position" content="2" />
+    </li>
+    
+    <!-- Category link (if available) -->
+  <!--   {% if page.category or page.categories %}
+      {% assign primary_category = page.category %}
+      {% if page.categories %}
+        {% assign primary_category = page.categories[0] %}
+      {% endif %}
+      
+      <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+        <a itemprop="item" href="{{ '/category/' | append: primary_category | slugify | relative_url }}">
+          <span itemprop="name">{{ primary_category | capitalize }}</span>
+        </a>
+        <meta itemprop="position" content="3" />
+      </li>
+      
+      <!-- Current post (no link) with position 4 -->
+      <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+        <span itemprop="name">{{ page.title }}</span>
+        <meta itemprop="position" content="4" />
+      </li>
+    {% else %} -->
+      <!-- Current post (no link) with position 3 if no category -->
+      <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+        <span itemprop="name">{{ page.title }}</span>
+        <meta itemprop="position" content="3" />
+      </li>
+    {% endif %}
+  </ol>
+</nav>

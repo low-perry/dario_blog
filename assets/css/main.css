@@ -55,7 +55,7 @@
   --logo-lavender: #7287fd;
 }
 
-header {
+.navigation-header {
   background-color: var(--mantle-color);
   padding: 10px 0;
 }
@@ -83,7 +83,7 @@ h1.page-title {
   color: var(--page-color);
   font-size: 3em;
   font-weight: 600;
-  margin-bottom: 20px;
+  margin-bottom: 45px;
 }
 a {
   color: var(--link-color);
@@ -515,4 +515,45 @@ pre {
 .contact-logo svg {
   width: 200px;
   height: 200px;
+}
+
+/* Breadcrumbs styling */
+.breadcrumbs {
+  margin-bottom: 1.5rem;
+  margin-top: 1rem;
+  font-size: 0.9rem;
+}
+
+.breadcrumbs ol {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.breadcrumbs li {
+  display: inline-block;
+}
+
+.breadcrumbs li:not(:last-child)::after {
+  content: "/";
+  margin: 0 0.5rem;
+  color: var(--soft-text-color);
+}
+
+.breadcrumbs a {
+  text-decoration: none;
+}
+
+.breadcrumbs a:hover {
+  text-decoration: underline;
+}
+
+.breadcrumbs li:last-child {
+  color: var(--soft-text-color);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  max-width: 300px;
 }
