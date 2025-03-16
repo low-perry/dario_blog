@@ -148,12 +148,12 @@ color: rgb(250, 179, 135)
   top: 60px; /* Adjust this value to match the height of your navbar */
   z-index: 100;
   background-color: var(--background-color);
-  transition: box-shadow 0.3s ease;
+  transition: border-bottom 0.3s ease;
 }
 
 /* Add a class for when the nav is stuck */
 .section-nav.stuck {
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  border-bottom: 1px solid var(--nav-menu-color);
 }
 
   .btn-icon {
