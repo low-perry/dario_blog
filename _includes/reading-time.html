@@ -3,7 +3,6 @@
 {% else %}
   {% assign words = content | strip_html | number_of_words %}
 {% endif %}
-{% assign words = content | strip_html | number_of_words %}
 {% assign minutes = words | divided_by: 200.0 %}
 {% assign minutes_rounded = minutes | round %}
 {% if minutes_rounded < 1 %}
