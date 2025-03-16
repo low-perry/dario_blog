@@ -1,5 +1,42 @@
+/* Variable font (modern browsers) */
+@font-face {
+  font-family: 'Inter';
+  src: url('../fonts/inter/Inter-VariableFont_opsz,wght.ttf') format('truetype-variations');
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Inter';
+  src: url('../fonts/inter/Inter-Italic-VariableFont_opsz,wght.ttf') format('truetype-variations');
+  font-weight: 100 900;
+  font-style: italic;
+  font-display: swap;
+}
+
+/* Fallback for older browsers - add only the weights you actually use */
+@supports not (font-variation-settings: normal) {
+  @font-face {
+    font-family: 'Inter';
+    src: url('../fonts/inter/static/Inter_18pt-Regular.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+  }
+  
+  @font-face {
+    font-family: 'Inter';
+    src: url('../fonts/inter/static/Inter_18pt-Bold.ttf') format('truetype');
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+  }
+}
+
 :root {
   --background-color: #1e1e2e;
+  --font-family: 'Inter', system-ui, sans-serif;
   --text-color: #cdd6f4;
   --mantle-color: #181825;
   --crust-color: #11111b;
@@ -23,7 +60,6 @@
   --logo-pink: #f5c2e7;
   --logo-lavender: #b4befe;
   --title-font-size: 32px;
-  --font-family: "Inter", sans-serif;
   --main-padding: 20px;
   --main-margin: 20px;
   --main-font-size: 18px;
@@ -566,4 +602,63 @@ pre {
 .search-icon:hover {
   transform: scale(1.1);
   cursor: pointer;
+}
+
+#theme-toggle {
+  cursor: pointer;
+  position: relative;
+  width: 24px;
+  height: 24px;
+  display: inline-flex;
+  align-items: center;
+  margin-right: 20px;
+}
+
+.theme-icon {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  opacity: 0;
+  transform: scale(0.8);
+  pointer-events: none;
+  color: var(--nav-menu-color);
+  fill: var(--nav-menu-color);
+  transition: opacity 0.3s;
+}
+
+/* Active icon state */
+.theme-icon.active-icon {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* Hover animations */
+/* Sun rotation and pulsate */
+#theme-toggle:hover #light-mode-icon.active-icon {
+  animation: sun-hover 1.5s infinite alternate;
+}
+
+/* Moon pulsate only */
+#theme-toggle:hover #dark-mode-icon.active-icon {
+  animation: moon-hover 1s infinite alternate;
+}
+
+/* Sun animation: rotate and pulsate */
+@keyframes sun-hover {
+  0% { 
+    transform: scale(1) rotate(0deg); 
+  }
+  100% { 
+    transform: scale(1.1) rotate(30deg); 
+  }
+}
+
+/* Moon animation: simple pulsate */
+@keyframes moon-hover {
+  0% { 
+    transform: scale(1); 
+  }
+  100% { 
+    transform: scale(1.1);
+  }
 }

@@ -6,7 +6,10 @@
         </a>
     </div>
     <div class="nav-menu">
-        <i id="theme-icon" class="fas fa-moon"></i>
+        <div id="theme-toggle">
+            {% include svg-icon.html name="moon" id="dark-mode-icon" class="theme-icon active-icon" %}
+            {% include svg-icon.html name="sun" id="light-mode-icon" class="theme-icon" %}
+        </div>
         {% include svg-icon.html name="search" class="search-icon" %}
         </button>
         <div class="navbar-toggle" id="navbar-toggle">
