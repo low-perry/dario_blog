@@ -1,7 +1,12 @@
 ---
 layout: main
 ---
-<div class="page-container">
-    <h1 class="page-title">{{ page.title }}</h1>
- {{content}}
-</div>
+<article class="post page-container">
+    {% include breadcrumbs.html %}
+    
+    <header class="post-header">
+      <h1 class="page-title">{{ page.title }}</h1>
+      {% include reading-time.html %}
+    </header>
+    {{content}}
+  </article>
