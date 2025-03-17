@@ -43,7 +43,6 @@
                     'content': window.store[key].content
                 });
             }
-            console.log('idx created');
         });
         // Save the index to session storage
         sessionStorage.setItem('lunrIndex', JSON.stringify(index));

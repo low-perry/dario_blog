@@ -74,10 +74,8 @@
       // Function to apply the saved theme
       function applySavedTheme() {
         const savedTheme = localStorage.getItem("theme");
-        console.log(savedTheme);
         if (savedTheme) {
           document.documentElement.classList.add(savedTheme);
-          console.log(savedTheme);
           updateThemeIcon(savedTheme);
         } else {
           updateThemeIcon("dark-mode");
@@ -87,19 +85,13 @@
       // Function to update the theme icon
       function updateThemeIcon(theme) {
         const moonIcon = document.getElementById("dark-mode-icon");
-        console.log("MoonIcon  "+ moonIcon);
         const sunIcon = document.getElementById("light-mode-icon");
-        console.log("SunIcon  "+ sunIcon);
         if (theme === "light-mode") {
           moonIcon.classList.remove("active-icon");
-          console.log("MoonIcon  "+ moonIcon);
           sunIcon.classList.add("active-icon");
-          console.log("SunIcon  "+ sunIcon);
         } else {
           sunIcon.classList.remove("active-icon");
-          console.log("SunIcon  "+ sunIcon);
           moonIcon.classList.add("active-icon");
-          console.log("MoonIcon  "+ moonIcon);
         }
       }
 
@@ -108,7 +100,6 @@
 
       // Toggle theme and save preference to localStorage
       const themeToggle = document.getElementById("theme-toggle");
-      console.log("ThemeToggle  "+ themeToggle);
       themeToggle.addEventListener("click", function () {
         document.documentElement.classList.toggle("light-mode");
         if (document.documentElement.classList.contains("light-mode")) {
