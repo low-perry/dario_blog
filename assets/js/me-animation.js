@@ -61,9 +61,6 @@ function checkModelsLoaded() {
     astronaut.position.x += 1;
 
     // Start the simulation once all models have been loaded.
-    console.log("Moon1 position: ", moon1.position);
-    console.log("Moon2 position: ", moon2.position);
-    console.log("Astronaut position: ", astronaut.position);
     animate();
   }
 }
