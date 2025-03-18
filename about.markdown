@@ -33,14 +33,14 @@ color: rgb(250, 179, 135)
   <div id="marker-bio" class="section-marker"></div>
   <section id="bio">
     <p>If my social media presence has ever revealed a truth about me, it's that "about me" sections and I have been in a philosophical conflict for as long as my digital footprint has existed. (My first one ever was "*describes who he is*", and the latest being, "Why is it always Bios?")</p>
-    <p>My name is Dario.</p>
+    <p>But here we go. My name is Dario. I am mainly a web developer, with a passion for frontend technologies.  </p>
   </section>
 
   <!-- Experience Section -->
   <div id="marker-experience" class="section-marker"></div>
   <section id="experience">
     <h2>Professional Journey</h2>
-    <p>Add your experience details here...</p>
+    <p></p>
     <!-- Add your experience content -->
   </section>
 
