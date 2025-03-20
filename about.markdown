@@ -89,6 +89,13 @@ color: rgb(250, 179, 135)
   <li>Git</li>
   <li>GitHub</li>
 </ul>
+<h3>Languages</h3>
+<ul>
+<li>English</li>
+<li>Italian</li>
+<li>Albanian</li>
+<li>Albanian Sign Language</li>
+</ul>
 
     <!-- Add your experience content -->
   </section>
