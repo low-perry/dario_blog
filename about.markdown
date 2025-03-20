@@ -134,22 +134,48 @@ color: rgb(250, 179, 135)
   <div id="marker-favorites" class="section-marker"></div>
   <section id="favorites">
     <h2>My Favorites</h2>
-    <ul>
-      <li>color: <span style="color: orange;">orange</span></li>
-      <li>food: <span>🍝</span></li>
-      <li>books:
+      <h3>Color</h3>
+        <p>
+          My favorite color is <span style="color: #fe640b">orange</span>, like a
+          peach or the sunset reflection at the meeting point of the Ionian and Adriatic
+          Seas in my hometown.
+        </p>
+      <h3>Food</h3>
+        <p>
+          My favorite food is pasta, and my favorite types are either linguine or
+          penne rigate. I can make the best cherry tomato sauce with basil.
+        </p>
+      <h3>Book</h3>
+        <p>
+          This is a hard one, and I’m going to cheat. So here is the resolution of
+          my internal battle:
+        </p>
         <ul>
-          <li>The Odyssey by Homer</li>
-          <li>The Magic Mountain by Thomas Mann</li>
-          <li>The General of the Dead Army by Ismail Kadare</li>
-          <li>The Human Comedy by William Saroyan</li>
-          <li>A Season in Hell by Arthur Rimbaud</li>
+          <li>
+            My favorite Albanian novel: <em>The General of the Dead Army</em> by
+            Ismail Kadare
+          </li>
+          <li>My favorite epic poem: <em>The Odyssey</em> by Homer</li>
+          <li>My favorite poetry book: <em>A Season in Hell</em> by Arthur Rimbaud</li>
+          <li>My favorite novel: <em>The Magic Mountain</em> by Thomas Mann</li>
+          <li>
+            My favorite play: <em>The Resistible Rise of Arturo Ui</em> by Bertolt
+            Brecht
+          </li>
+          <li>My favorite short story: <em>The Overcoat</em> by Nikolai Gogol</li>
         </ul>
-      </li>
-      <li>sport: volleyball</li>
-      <li>way to relax: walk along the beach</li>
-    </ul>
-  </section>
+      <h3>Movie</h3>
+        <p>My favorite movie is <em>Night on Earth</em> by Jim Jarmusch.</p>
+      <h3>Song</h3>
+        <p>I’m not going to pick a favorite song because it’s a transient, dynamic feeling. However, I do have a favorite music video: Rihanna's <em>Needed Me</em>, directed by one of my favorite movie directors, Harmony Korine.</p>
+      <h3>Language</h3>
+        <p>My favorite language is Albanian. It's sweet, it's soft, it's complex.</p>
+      <h3>Sport</h3>
+        <p>My favorite sport is Volleyball.</p>
+      <br>
+      <br>
+      <h4>In progress...</h4>
+</section>
 </div>
 
 <script>
