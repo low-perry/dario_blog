@@ -35,6 +35,9 @@ color: rgb(250, 179, 135)
   <section id="bio">
     <p>If my social media presence has ever revealed a truth about me, it's that "about me" sections and I have been in a philosophical conflict for as long as my digital footprint has existed. (My first one ever was "*describes who he is*", and the latest being, "Why is it always Bios?")</p>
     <p>But here we go. My name is Dario. I am mainly a web developer, with a passion for frontend technologies.</p>
+     <br>
+    <p>I hope you enjoyed the little 3D animation on this page because I truly enjoyed making it! It’s built with Three.js, and the 3D objects were created in Blender. You can navigate the scene by zooming in or out, and explore along the x, y, and z axes. You can also make the little astronaut, cleverly named AstroPink, jump from moon to moon by pressing the Space key.
+    </p>
   </section>
 
   <!-- Experience Section -->
