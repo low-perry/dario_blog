@@ -97,13 +97,37 @@ color: rgb(250, 179, 135)
   <div id="marker-hobbies" class="section-marker"></div>
   <section id="hobbies">
     <h2>Favorite Activities</h2>
-    <ul>
-      <li>running</li>
-      <li>reading</li>
-      <li>playing chess</li>
-      <li>coding</li>
-      <li>hiking</li>
-    </ul>
+    <h3>Running</h3>
+    <p>
+      I love running; it's my favorite way to get some exercise. I recently
+      rediscovered this hobby and am currently running 5k in 35 minutes. My goal is
+      to complete a half marathon by the end of the year.
+    </p>
+    <h3>Swimming</h3>
+    <p>
+      I grew up in a coastal city at the meeting point of the Adriatic and Ionian
+      seas. Swimming has always been an important part of my life.
+    </p>
+    <h3>Reading</h3>
+    <p>
+      I love exploring a wide range of genres. While I mostly read
+      fiction, I adore the classics. I also enjoy non-fiction, particularly topics
+      on math and science. However, my greatest passion lies in poetry. I appreciate
+      poetry across all genres, though I have a soft spot for French Symbolism,
+      Surrealism, Dadaism, and Italian Hermeticism.
+    </p>
+    <h3>Playing Chess</h3>
+    <p>
+      I started playing chess eight years ago and still approach it with the same
+      enthusiasm. It’s a fantastic way for me to relax and keep my mind sharp.
+    </p>
+    <h3>Gaming</h3>
+    <p>
+      I am a casual gamer and enjoy metroidvania platformers and action roguelikes.
+      My recent achievements include defeating the final boss in <strong>Nine Sols</strong> and
+      completing <strong>Slay the Spire</strong> on Ascension 20.
+    </p>
+
   </section>
 
   <!-- Favorites Section -->
