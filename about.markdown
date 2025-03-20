@@ -4,6 +4,7 @@ title: Me
 permalink: /me/
 color: rgb(250, 179, 135)
 ---
+
 <div id="canvas-container" 
      data-moon-url="{{ '/assets/3DObjects/moon.glb' | relative_url }}"
      data-astronaut-url="{{ '/assets/3DObjects/astropink.glb' | relative_url }}" >
@@ -40,7 +41,55 @@ color: rgb(250, 179, 135)
   <div id="marker-experience" class="section-marker"></div>
   <section id="experience">
     <h2>Professional Journey</h2>
-    <p></p>
+    <h3>Web Development</h3>
+<p>
+  I have several years of experience in web development and its associated
+  technologies. I designed the curriculum for a beginner-level web development
+  course, which I taught for several years, leaving hundreds of students
+  satisfied.
+</p>
+<p>
+  I am proficient in JavaScript, HTML, CSS, and React on the frontend, and
+  Node.js, Express.js, and ASP.NET on the backend.
+</p>
+<h3>Desktop Development</h3>
+<p>
+  I have developed numerous desktop applications for Windows users, utilizing
+  technologies such as WinForms and Xamarin.Forms. Additionally, I briefly
+  explored Flutter and Dart.
+</p>
+<h3>Programming Languages</h3>
+<p>
+  I am passionate about Java and have designed a beginner-level course focused
+  on the core concepts of the language and basic data structures and algorithms
+  (DSA), which I successfully taught for several years.
+</p>
+<h3>Open Source</h3>
+<p>
+  I am an active contributor to open-source projects on GitHub. I have
+  contributed to several projects, including the popular MDN Web Docs.
+</p>
+<h3>Skills</h3>
+<ul>
+  <li>JavaScript</li>
+  <li>HTML</li>
+  <li>CSS</li>
+  <li>React</li>
+  <li>Node.js</li>
+  <li>Express.js</li>
+  <li>ASP.NET</li>
+  <li>Java</li>
+  <li>WinForms</li>
+  <li>Xamarin.Forms</li>
+  <li>Flutter</li>
+  <li>Dart</li>
+  <li>DSA</li>
+  <li>C#</li>
+  <li>SQL</li>
+  <li>Git</li>
+  <li>GitHub</li>
+</ul>
+
     <!-- Add your experience content -->
   </section>
 
