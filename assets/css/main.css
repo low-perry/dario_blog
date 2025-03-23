@@ -664,3 +664,28 @@ pre {
     transform: scale(1.1);
   }
 }
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1rem 0;
+}
+
+th, td {
+  border: 1px solid currentColor; /* Border color matches text color */
+  padding: 0.75rem;
+  text-align: left;
+}
+
+th {
+  background-color: var(--background-color); /* Adjust for your theme */
+  font-weight: bold;
+}
+
+tr:nth-child(even) {
+  background-color: rgba(0, 0, 0, 0.05); /* Light shading for even rows */
+}
+
+tr:nth-child(odd) {
+  background-color: transparent; /* No shading for odd rows */
+}

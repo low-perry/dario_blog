@@ -18,3 +18,16 @@ Later, I came across [this issue](https://github.com/mdn/content/issues/38384) w
 [MPEG-1 Audio Layer III](https://developer.mozilla.org/en-US/docs/Web/Media/Guides/Formats/Audio_codecs#mp3_mpeg-1_audio_layer_iii) also simply knows as MP3, refres to both an audio codec, but also to a very popular file format. Below it's a simple diagram representing it's [structure](https://en.wikipedia.org/wiki/MP3#File_structure):
 
 <img src="../../assets/images/mp3Structure.png" alt="MP3 File Structure" width="700" height="400" />
+
+## Is MP3 a media container format?
+To have an aswer to the question above, we first have to look at similiar format, [FLAC](https://datatracker.ietf.org/doc/rfc9639/). Like MP3, FLAC is both a audio codec and a widely used file format. A simplified version of it's structure can be found below:
+
+<img src="../../assets/images/flackStructure.png" alt="FLAC File Structure" width="700" height="400" />
+
+| **Aspect**                | **FLAC**                                                                                                                                      | **MP3**                                                                                                                                |
+|---------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------|
+| **Structure**             | Self-contained with a defined internal organization—includes a FLAC marker, STREAMINFO, and other metadata blocks followed by audio frames.  | A continuous chain of MP3 frames (each with a header and data block) forming an elementary stream, with minimal additional structure. |
+| **Metadata Handling**     | Metadata is integrated into the file structure (e.g., STREAMINFO block, Vorbis comments), making it part of the container-like design.         | Metadata (e.g., ID3 tags) is placed either at the beginning or end of the stream rather than being an integrated container component.  |
+| **Frame Independence**    | Audio frames are organized as independent units within the file, even though they are primarily for lossless audio data.                        | Frames are interdependent due to the bit reservoir; frames cannot be arbitrarily extracted or considered fully independent.            |
+| **Purpose & Use Cases**   | Designed to preserve high-fidelity, lossless audio with all necessary parameters neatly packaged together—ideal for archiving and quality playback. | Designed for efficient, compressed audio playback with a focus on minimizing file size and resource usage.                             |
+| **Container-Like Behavior** | Acts like a basic container for audio by providing structured blocks for both audio data and metadata within one file.                         | Does not function as a true container; it is essentially a sequence of encoded audio frames without multiplexing support.                |
