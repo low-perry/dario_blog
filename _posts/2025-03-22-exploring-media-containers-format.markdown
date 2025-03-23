@@ -10,7 +10,7 @@ While reading [MDN's](https://developer.mozilla.org/en-US/) article on [Media Co
 
 Although the available resources were somewhat limited, I found valuable information in [Matroska’s documentation](https://www.matroska.org/technical/basics.html#:~:text=First%2C%20it%20is,a%20single%20file) and [Wikipedia](https://en.wikipedia.org/wiki/Container_format). These sources helped me come up with the following definition:
 
-> **A media container is a file format that encapsulates one or more media streams (such as audio or video) along with metadata, enabling them to be stored and played back together.** The format of audio and video media files is defined by multiple components, including the codecs used for audio and/or video, the media container (or file type), and optionally other elements such as subtitle codecs or additional metadata.
+> A media container is a file format that encapsulates one or more media streams (such as audio or video) along with metadata, enabling them to be stored and played back together. The format of audio and video media files is defined by multiple components, including the codecs used for audio and/or video, the media container (or file type), and optionally other elements such as subtitle codecs or additional metadata.
 
 Later, I came across [this issue](https://github.com/mdn/content/issues/38384) which asserted that MP3 is not a media container. Initially, I was skeptical because, in simple terms, MP3 does behave somewhat like a container—it can wrap metadata alongside the audio track. Nevertheless, this prompted me to delve even deeper into the topic.
 
