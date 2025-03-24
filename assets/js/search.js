@@ -13,7 +13,7 @@
 
             for (let i = 0; i < results.length; i++) {  // Iterate over them and generate html
                 const item = store[results[i].ref];
-                appendString += '<li><a href="' + item.url + '" style="display: block; text-decoration: none; color: inherit;">';
+                appendString += '<li><a href="'+ BASEURL + item.url + '" style="display: block; text-decoration: none; color: inherit;">';
                 appendString += '<span class="post-meta">' + item.date + '</span><h2>' + item.title + '</h2>';
                 appendString += '<p class="small">' + item.content.substring(0, 100) + '...</p>';
                 appendString += '</a></li>';
