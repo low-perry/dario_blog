@@ -18,13 +18,13 @@ Later, I came across [this issue](https://github.com/mdn/content/issues/38384) w
 
 [MPEG-1 Audio Layer III](https://developer.mozilla.org/en-US/docs/Web/Media/Guides/Formats/Audio_codecs#mp3_mpeg-1_audio_layer_iii), more commonly known as MP3, refers both to an audio codec and to a very popular file format. Below is a simple diagram representing its [structure](https://en.wikipedia.org/wiki/MP3#File_structure):
 
-<img src="../../assets/images/mp3Structure.png" alt="MP3 File Structure" width="700" height="400" />
+<img src="{{ '/assets/images/mp3Structure.png' | relative_url }}" alt="MP3 File Structure" width="700" height="400" />
 
 ## Is MP3 a media container format?
 
 To answer the question above, we first need to examine a similar format: [FLAC](https://datatracker.ietf.org/doc/rfc9639/). Like MP3, FLAC serves as both an audio codec and a widely used file format. A simplified version of its structure is shown below:
 
-<img src="../../assets/images/flackStructure.png" alt="FLAC File Structure" width="700" height="400" />
+<img src="{{ '/assets/images/flackStructure.png' | relative_url }}" alt="FLAC File Structure" width="700" height="400" />
 
 Now let's compare both formats.
 
