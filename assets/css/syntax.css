@@ -94,3 +94,8 @@
   padding-left: 5px;
   padding-right: 5px;
 }
+
+.language-javascript.highlighter-rouge .highlight .nx:not(:has(+ span:contains("this") + span:contains(".") + span.nx)) + span.p,
+.language-typescript.highlighter-rouge .highlight .nx:not(:has(+ span:contains("this") + span:contains(".") + span.nx)) + span.p {
+  color: var(--nav-link-2-color);
+}
