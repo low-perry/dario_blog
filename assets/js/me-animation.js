@@ -148,6 +148,12 @@ document.addEventListener("keydown", (event) => {
     initiateAstronautJump();
   }
 });
+// Trigger the jump when the screen is tapped (mobile)
+document.addEventListener("touchstart", (event) => {
+  if (!isJumping) {
+    initiateAstronautJump();
+  }
+});
 
 function initiateAstronautJump() {
   if (!moon1 || !moon2 || !astronaut) return;
