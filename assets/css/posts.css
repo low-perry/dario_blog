@@ -3,6 +3,10 @@
     flex-wrap: wrap;
     gap: 20px;
 }
+article img {
+    max-width: 100%;
+    height: auto;
+}
 
 
 .post-card {
@@ -44,25 +48,34 @@
     .post-card {
         width: 100%; /* 1 post per row on very small screens */
     }
-    h1.page-title {
+    article h1.page-title {
       font-size: 1.5rem; /* Smaller font size for h1 */
     }
-    h2 {
+    article h2 {
       font-size: 1.3rem; /* Smaller font size for h2 */
     }
-    h3 {
+    article h3 {
       font-size: 1.1rem; /* Smaller font size for h3 */
     }
-    h4, h5, h6 {
+    article h4, article h5, article h6 {
       font-size: 0.9rem; /* Smaller font size for h4, h5, h6 */
     }
   
     /* Adjust paragraph font size */
-    p, code {
+    article p, article code {
       font-size: 0.7rem;
     }
     .page-container {
       padding: 20px 0;
+    }
+    article  table, 
+    article table th, 
+    article table td {
+      font-size: 0.7rem;
+    }
+    article img {
+      max-width: 100%;
+      height: auto;
     }
 }
 
