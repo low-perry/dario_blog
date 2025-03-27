@@ -63,7 +63,7 @@ article img {
   
     /* Adjust paragraph font size */
     article p, article code {
-      font-size: 0.7rem;
+      font-size: 0.8rem;
     }
     .page-container {
       padding: 20px 0;
@@ -72,10 +72,6 @@ article img {
     article table th, 
     article table td {
       font-size: 0.7rem;
-    }
-    article img {
-      max-width: 100%;
-      height: auto;
     }
 }
 
