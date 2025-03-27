@@ -44,6 +44,26 @@
     .post-card {
         width: 100%; /* 1 post per row on very small screens */
     }
+    h1.page-title {
+      font-size: 1.5rem; /* Smaller font size for h1 */
+    }
+    h2 {
+      font-size: 1.3rem; /* Smaller font size for h2 */
+    }
+    h3 {
+      font-size: 1.1rem; /* Smaller font size for h3 */
+    }
+    h4, h5, h6 {
+      font-size: 0.9rem; /* Smaller font size for h4, h5, h6 */
+    }
+  
+    /* Adjust paragraph font size */
+    p, code {
+      font-size: 0.7rem;
+    }
+    .page-container {
+      padding: 20px 0;
+    }
 }
 
 /* Post meta (date and reading time) styling */
