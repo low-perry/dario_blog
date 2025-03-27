@@ -3,6 +3,10 @@
     flex-wrap: wrap;
     gap: 20px;
 }
+article img {
+    max-width: 100%;
+    height: auto;
+}
 
 
 .post-card {
