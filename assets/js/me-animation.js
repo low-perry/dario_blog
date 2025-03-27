@@ -150,7 +150,7 @@ document.addEventListener("keydown", (event) => {
 });
 // Trigger the jump when the screen is tapped (mobile)
 document.addEventListener("touchstart", (event) => {
-  if (!isJumping) {
+  if (container.contains(event.target) && !isJumping) {
     initiateAstronautJump();
   }
 });
