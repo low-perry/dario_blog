@@ -73,6 +73,11 @@ article img {
     article table td {
       font-size: 0.7rem;
     }
+    article ul, 
+    article ol, 
+    article li {
+      font-size: 0.8rem; /* Smaller font size for lists */
+    }
 }
 
 /* Post meta (date and reading time) styling */
