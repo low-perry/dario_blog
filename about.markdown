@@ -7,7 +7,11 @@ color: rgb(250, 179, 135)
 
 <div id="canvas-container" 
      data-moon-url="{{ '/assets/3DObjects/moon.glb' | relative_url }}"
-     data-astronaut-url="{{ '/assets/3DObjects/astropink.glb' | relative_url }}" >
+     data-moon-draco-url="{{ '/assets/3DObjects/moon-draco.glb' | relative_url }}"
+     data-moon-lowres-url="{{ '/assets/3DObjects/moon-lowres-draco.glb' | relative_url }}"
+     data-astronaut-url="{{ '/assets/3DObjects/astropink.glb' | relative_url }}"
+     data-astronaut-draco-url="{{ '/assets/3DObjects/astropink-draco.glb' | relative_url }}"
+     data-astronaut-lowres-url="{{ '/assets/3DObjects/astropink-lowres-draco.glb' | relative_url }}">
 </div>
 
 <div class="section-nav">
