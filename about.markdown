@@ -15,19 +15,19 @@ color: rgb(250, 179, 135)
 </div>
 
 <div class="section-nav">
-  <button class="section-btn" data-section="bio">
+  <button class="section-btn" aria-label="bio" data-section="bio">
     {% include svg-icon.html name="profile" class="btn-icon" %}
     <span>Bio</span>
   </button>
-  <button class="section-btn" data-section="experience">
+  <button class="section-btn" aria-label="experience" data-section="experience">
     {% include svg-icon.html name="briefcase" class="btn-icon" %}
     <span>Experience</span>
   </button>
-  <button class="section-btn" data-section="hobbies">
+  <button class="section-btn" aria-label="hobbies" data-section="hobbies">
     {% include svg-icon.html name="hobby" class="btn-icon" %}
     <span>Hobbies</span>
   </button>
-  <button class="section-btn" data-section="favorites">
+  <button class="section-btn" aria-label="favorites" data-section="favorites">
     {% include svg-icon.html name="star" class="btn-icon" %}
     <span>Favorites</span>
   </button>
