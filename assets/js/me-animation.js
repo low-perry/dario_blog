@@ -1,17 +1,32 @@
 import * as THREE from "three";
 import { GLTFLoader } from "jsm/loaders/GLTFLoader.js";
+import { DRACOLoader } from "jsm/loaders/DRACOLoader.js";
 import { OrbitControls } from "jsm/controls/OrbitControls.js";
 import getStarfield from "./starfield.js";
 
 const container = document.getElementById("canvas-container");
+
+// Get all available model URLs
 const moonUrl = container.dataset.moonUrl;
+const moonDracoUrl = container.dataset.moonDracoUrl;
+const moonLowresUrl = container.dataset.moonLowresUrl;
 const astronautUrl = container.dataset.astronautUrl;
+const astronautDracoUrl = container.dataset.astronautDracoUrl;
+const astronautLowresUrl = container.dataset.astronautLowresUrl;
+
+// Device and connection detection
+const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+const isLowBandwidth = navigator.connection ? (navigator.connection.downlink < 5) : false;
+
+// Choose the appropriate model URLs based on device capabilities
+const selectedMoonUrl = isLowBandwidth || isMobile ? moonLowresUrl : moonDracoUrl || moonUrl;
+const selectedAstronautUrl = isLowBandwidth || isMobile ? astronautLowresUrl : astronautDracoUrl || astronautUrl;
 
 // Get dimensions from the container instead of window
 const w = container.clientWidth;
 const h = container.clientHeight;
 
-const renderer = new THREE.WebGLRenderer({ antialias: true });
+const renderer = new THREE.WebGLRenderer({ antialias: !isMobile });
 renderer.setSize(w, h);
 container.appendChild(renderer.domElement);
 
@@ -32,20 +47,23 @@ controls.dampingFactor = 0.01;
 // Add ambient light for general illumination
 scene.add(new THREE.AmbientLight(0x555555));
 
-
 // Add a directional light for more uniform lighting
 const directionalLight = new THREE.DirectionalLight(0xffffff, 1.5);
 directionalLight.position.set(0, 1, 0);
 scene.add(directionalLight);
 
-const starfield = getStarfield({ numStars: 5000 });
+const starfield = getStarfield({ numStars: isMobile ? 2000 : 5000 });
 scene.add(starfield);
 
 // --------------------------
-// 2. Load GLTF Models
+// 2. Load GLTF Models with DRACO support
 // --------------------------
-// We'll load three models: two for the orbiting bodies and one for the astronaut.
 const loader = new GLTFLoader();
+
+// Set up DRACO loader
+const dracoLoader = new DRACOLoader();
+dracoLoader.setDecoderPath('https://www.gstatic.com/draco/versioned/decoders/1.5.5/');
+loader.setDRACOLoader(dracoLoader);
 
 let moon1, moon2, astronaut;
 let modelsLoaded = 0;
@@ -67,7 +85,7 @@ function checkModelsLoaded() {
 
 // Load moon1 glTF model
 loader.load(
-  moonUrl,
+  selectedMoonUrl,
   function (gltf) {
     moon1 = gltf.scene;
     // Adjust scale/rotation if needed (depends on your model)
@@ -76,15 +94,36 @@ loader.load(
     modelsLoaded++;
     checkModelsLoaded();
   },
-  undefined,
+  function (xhr) {
+    const percentLoaded = (xhr.loaded / xhr.total) * 100;
+    console.log(`Loading moon model: ${Math.round(percentLoaded)}% loaded`);
+  },
   function (error) {
-    console.error("Error loading moon.glb:", error);
+    console.error("Error loading moon model:", error);
+    // Fallback to original model if compressed fails
+    if (selectedMoonUrl !== moonUrl) {
+      console.log("Attempting to load original moon model as fallback");
+      loader.load(
+        moonUrl,
+        function (gltf) {
+          moon1 = gltf.scene;
+          moon1.scale.set(1, 1, 1);
+          scene.add(moon1);
+          modelsLoaded++;
+          checkModelsLoaded();
+        },
+        undefined,
+        function (error) {
+          console.error("Error loading fallback moon model:", error);
+        }
+      );
+    }
   }
 );
 
 // Load moon2 glTF model
 loader.load(
-  moonUrl,
+  selectedMoonUrl,
   function (gltf) {
     moon2 = gltf.scene;
     moon2.scale.set(1, 1, 1);
@@ -92,15 +131,36 @@ loader.load(
     modelsLoaded++;
     checkModelsLoaded();
   },
-  undefined,
+  function (xhr) {
+    const percentLoaded = (xhr.loaded / xhr.total) * 100;
+    console.log(`Loading second moon model: ${Math.round(percentLoaded)}% loaded`);
+  },
   function (error) {
-    console.error("Error loading moon.glb:", error);
+    console.error("Error loading second moon model:", error);
+    // Fallback to original model if compressed fails
+    if (selectedMoonUrl !== moonUrl) {
+      console.log("Attempting to load original moon model as fallback");
+      loader.load(
+        moonUrl,
+        function (gltf) {
+          moon2 = gltf.scene;
+          moon2.scale.set(1, 1, 1);
+          scene.add(moon2);
+          modelsLoaded++;
+          checkModelsLoaded();
+        },
+        undefined,
+        function (error) {
+          console.error("Error loading fallback moon model:", error);
+        }
+      );
+    }
   }
 );
 
 // Load astronaut glTF model
 loader.load(
-  astronautUrl,
+  selectedAstronautUrl,
   function (gltf) {
     astronaut = gltf.scene;
     astronaut.scale.set(1, 1, 1);
@@ -108,9 +168,30 @@ loader.load(
     modelsLoaded++;
     checkModelsLoaded();
   },
-  undefined,
+  function (xhr) {
+    const percentLoaded = (xhr.loaded / xhr.total) * 100;
+    console.log(`Loading astronaut model: ${Math.round(percentLoaded)}% loaded`);
+  },
   function (error) {
-    console.error("Error loading astronaut1.glb:", error);
+    console.error("Error loading astronaut model:", error);
+    // Fallback to original model if compressed fails
+    if (selectedAstronautUrl !== astronautUrl) {
+      console.log("Attempting to load original astronaut model as fallback");
+      loader.load(
+        astronautUrl,
+        function (gltf) {
+          astronaut = gltf.scene;
+          astronaut.scale.set(1, 1, 1);
+          scene.add(astronaut);
+          modelsLoaded++;
+          checkModelsLoaded();
+        },
+        undefined,
+        function (error) {
+          console.error("Error loading fallback astronaut model:", error);
+        }
+      );
+    }
   }
 );
 
@@ -203,7 +284,7 @@ function initiateAstronautJump() {
 }
 
 // --------------------------
-// 4. Animation Loop
+// 4. Animation Loop with Performance Optimizations
 // --------------------------
 let isWiggling = false;
 let wiggleStartTime = 0;
@@ -211,9 +292,26 @@ const wiggleDuration = 0.8; // Duration in seconds
 const wiggleFrequency = 15; // Higher = faster oscillation
 const wiggleAmplitude = 0.5; // Higher = more intense wiggle
 
-// Modify the animate function to include the wiggle effect
-function animate() {
+let lastTime = 0;
+let frameCount = 0;
+let frameTime = 0;
+
+// Modify the animate function to include the wiggle effect and performance monitoring
+function animate(timestamp) {
   requestAnimationFrame(animate);
+  
+  // Calculate delta time for consistent animation regardless of frame rate
+  const deltaTime = lastTime ? (timestamp - lastTime) / 1000 : 0.016;
+  lastTime = timestamp;
+  
+  // Performance monitoring
+  frameCount++;
+  frameTime += deltaTime;
+  if (frameTime >= 1) {
+    // console.log(`FPS: ${Math.round(frameCount / frameTime)}`);
+    frameCount = 0;
+    frameTime = 0;
+  }
 
   const currentTime = performance.now() / 1000; // Current time in seconds
 
@@ -259,11 +357,11 @@ function animate() {
   if (moon1) moon1.position.copy(moon1BasePosition);
   if (moon2) moon2.position.copy(moon2BasePosition);
 
-  theta += 0.01;
+  theta += 0.01 * (deltaTime / 0.016); // Normalize to 60fps
 
   // Update the astronaut's position with easing.
   if (isJumping) {
-    jumpProgress += jumpSpeed;
+    jumpProgress += jumpSpeed * (deltaTime / 0.016);
     let t = jumpProgress;
 
     if (jumpProgress >= 1) {
@@ -306,8 +404,6 @@ function animate() {
 
     astronaut.lookAt(jumpTarget);
     astronaut.rotateX(-Math.PI / 12);
-
-    //rotate
   } else {
     // While not jumping, the astronaut stays "attached" to its host body.
     if (astronaut) {
@@ -345,7 +441,7 @@ function animate() {
 
       // Handle rotation transition
       if (isRotating) {
-        rotationProgress += rotationSpeed;
+        rotationProgress += rotationSpeed * (deltaTime / 0.016);
         if (rotationProgress >= 1) {
           rotationProgress = 1;
           isRotating = false;
@@ -361,18 +457,45 @@ function animate() {
     }
   }
 
-    // Update landing state timer
-    if (isLanding) {
-      // Since you don't have a deltaTime, use a fixed time increment (0.016 ≈ 60fps)
-      landingTimer += 0.016;
-      if (landingTimer >= landingDuration) {
-        isLanding = false;
-      }
+  // Update landing state timer
+  if (isLanding) {
+    landingTimer += deltaTime;
+    if (landingTimer >= landingDuration) {
+      isLanding = false;
     }
+  }
     
   renderer.render(scene, camera);
   controls.update();
 }
+
+// Loading screen or indicator
+const loadingElement = document.createElement('div');
+loadingElement.style.position = 'absolute';
+loadingElement.style.top = '50%';
+loadingElement.style.left = '50%';
+loadingElement.style.transform = 'translate(-50%, -50%)';
+loadingElement.style.color = 'white';
+loadingElement.style.fontSize = '20px';
+loadingElement.style.fontFamily = 'Arial, sans-serif';
+loadingElement.textContent = 'Loading models...';
+container.appendChild(loadingElement);
+
+// Remove loading indicator when models are loaded
+function removeLoadingIndicator() {
+  if (loadingElement.parentNode) {
+    loadingElement.parentNode.removeChild(loadingElement);
+  }
+}
+
+// Modify checkModelsLoaded to remove loading indicator
+const originalCheckModelsLoaded = checkModelsLoaded;
+checkModelsLoaded = function() {
+  if (modelsLoaded === 3) {
+    removeLoadingIndicator();
+    originalCheckModelsLoaded();
+  }
+};
 
 // --------------------------
 // 5. Handle Window Resize
@@ -387,3 +510,25 @@ function onWindowResize() {
   camera.updateProjectionMatrix();
   renderer.setSize(newWidth, newHeight);
 }
+
+// Function to detect connection speed and adjust quality accordingly
+function detectConnectionAndAdjustQuality() {
+  if (navigator.connection) {
+    const connection = navigator.connection;
+    
+    // Log connection information
+    console.log(`Connection type: ${connection.type}`);
+    console.log(`Effective bandwidth: ${connection.downlink} Mbps`);
+    console.log(`RTT: ${connection.rtt} ms`);
+    console.log(`Save-Data enabled: ${connection.saveData}`);
+    
+    // Listen for connection changes
+    connection.addEventListener('change', function() {
+      console.log(`Connection changed. New effective bandwidth: ${connection.downlink} Mbps`);
+      // Could implement dynamic quality adjustment here
+    });
+  }
+}
+
+// Call connection detection on startup
+detectConnectionAndAdjustQuality();

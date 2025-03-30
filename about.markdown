@@ -7,23 +7,27 @@ color: rgb(250, 179, 135)
 
 <div id="canvas-container" 
      data-moon-url="{{ '/assets/3DObjects/moon.glb' | relative_url }}"
-     data-astronaut-url="{{ '/assets/3DObjects/astropink.glb' | relative_url }}" >
+     data-moon-draco-url="{{ '/assets/3DObjects/moon-draco.glb' | relative_url }}"
+     data-moon-lowres-url="{{ '/assets/3DObjects/moon-lowres-draco.glb' | relative_url }}"
+     data-astronaut-url="{{ '/assets/3DObjects/astropink.glb' | relative_url }}"
+     data-astronaut-draco-url="{{ '/assets/3DObjects/astropink-draco.glb' | relative_url }}"
+     data-astronaut-lowres-url="{{ '/assets/3DObjects/astropink-lowres-draco.glb' | relative_url }}">
 </div>
 
 <div class="section-nav">
-  <button class="section-btn" data-section="bio">
+  <button class="section-btn" aria-label="bio" data-section="bio">
     {% include svg-icon.html name="profile" class="btn-icon" %}
     <span>Bio</span>
   </button>
-  <button class="section-btn" data-section="experience">
+  <button class="section-btn" aria-label="experience" data-section="experience">
     {% include svg-icon.html name="briefcase" class="btn-icon" %}
     <span>Experience</span>
   </button>
-  <button class="section-btn" data-section="hobbies">
+  <button class="section-btn" aria-label="hobbies" data-section="hobbies">
     {% include svg-icon.html name="hobby" class="btn-icon" %}
     <span>Hobbies</span>
   </button>
-  <button class="section-btn" data-section="favorites">
+  <button class="section-btn" aria-label="favorites" data-section="favorites">
     {% include svg-icon.html name="star" class="btn-icon" %}
     <span>Favorites</span>
   </button>
