@@ -475,7 +475,6 @@ loadingElement.style.position = 'absolute';
 loadingElement.style.top = '50%';
 loadingElement.style.left = '50%';
 loadingElement.style.transform = 'translate(-50%, -50%)';
-loadingElement.style.color = 'white';
 loadingElement.style.fontSize = '20px';
 loadingElement.style.fontFamily = 'Arial, sans-serif';
 loadingElement.textContent = 'Loading models...';
