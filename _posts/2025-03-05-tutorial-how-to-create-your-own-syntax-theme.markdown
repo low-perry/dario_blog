@@ -129,7 +129,7 @@ The following java code snippet showcases [my chosen theme](https://github.com/l
 
 ## Customizing Syntax Highlighting Colors
 
-### 1. Access Modifiers , Non-Access Modifiers & Declaration Keywords**
+### 1. Access Modifiers , Non-Access Modifiers & Declaration Keywords
 
 **Examples:** `public`, `private` & `final`, `abstract`, `static` & `class`, `interface`
 
@@ -191,7 +191,7 @@ The following java code snippet showcases [my chosen theme](https://github.com/l
 
 ```css
 
-    .highlight .kd {
+    .highlight .nc {
         color: #89b4fa; /* color of your choosing */
     }
 
