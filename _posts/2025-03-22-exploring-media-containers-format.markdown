@@ -36,4 +36,6 @@ Now let's compare both formats.
 | **Frame Independence**    | Audio frames are organized as independent units within the file, even though they are primarily for lossless audio data.                        | Frames are interdependent due to the bit reservoir; frames cannot be arbitrarily extracted or considered fully independent.            |
 | **Purpose & Use Cases**   | Designed to preserve high-fidelity, lossless audio with all necessary parameters neatly packaged together—ideal for archiving and quality playback. | Designed for efficient, compressed audio playback with a focus on minimizing file size and resource usage.                             |
 
+## Conclusion
+
 Based on the comparison above, we can conclude that FLAC acts like a basic container for audio, providing structured blocks for both the audio data and metadata within a single file. In contrast, MP3 does not function as a true container—it is essentially a continuous sequence of encoded audio frames without integrated multiplexing support.
