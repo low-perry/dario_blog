@@ -12,7 +12,7 @@ permalink: /blog/:title
 
 When crafting technical documentation, one of the most challenging decisions is determining how much detail to include. Too much depth, and you risk overwhelming your general audience; too little, and advanced users might find your content lacking. In this article, we'll explore strategies for striking that delicate balance, using real-world examples like the “Timeouts in inactive tabs” section from [MDN](https://developer.mozilla.org/en-US/), an integral part of the [`setTimeout()`](https://developer.mozilla.org/en-US/docs/Web/API/Window/setTimeout) method documentation, and insights from [Chrome for Developers](https://developer.chrome.com/) as a case study.
 
-## Understanding Your Audience
+## Understanding your audience
 
 The first step in deciding how deep to dive is identifying your audience. Ask yourself:
 
@@ -26,7 +26,7 @@ Do they need a high-level overview to understand a concept, or do they crave in-
 
 For example, the [MDN documentation](https://developer.mozilla.org/en-US/docs/Web/API/Window/setTimeout#:~:text=Timeouts%20in%20inactive%20tabs) on timer behaviors is used by a wide range of developers. While seasoned professionals might be interested in the nuances of throttling mechanisms detailed in the [Chrome for Developers article](https://developer.chrome.com/blog/timer-throttling-in-chrome-88#terminology), the majority of visitors benefit from concise, clear summaries.
 
-## Assessing the Complexity of the Subject
+## Assessing the complexity of the subject
 
 Not every topic requires an exhaustive breakdown. When dealing with technical details like JavaScript timer throttling, it’s essential to evaluate:
 
@@ -38,23 +38,23 @@ Concepts such as minimal throttling, regular throttling, and intensive throttlin
 
 Does understanding these nuances significantly affect how developers use the API? Often, a quick note with a link to further reading is enough.
 
-## Strategies for Balancing Detail and Clarity
+## Strategies for balancing detail and clarity
 
 Here are a few strategies you can consider:
 
-### Tiered Documentation
+### Tiered documentation
 
 Organize documentation into layers:
 
-- **High-Level Overview:** 
+- **High-level overview:** 
 
 Present only the critical points that most users need. For instance, note the default timeout behaviors (e.g., 1 second on desktops, 15 minutes on Firefox for Android) and mention exceptions like active audio contexts.
 
-- **Advanced Sections:** 
+- **Advanced sections:** 
 
 Create expandable sections or dedicated pages for developers who want to understand the underlying throttling mechanics. Here, you can explain concepts like chained timers and how intensive throttling works in Chrome 88.
 
-### Integrate Notes and Links
+### Integrate notes and links
 
 A brief note can acknowledge the existence of more complex behavior without overwhelming the reader:
 
@@ -64,11 +64,11 @@ A brief note can acknowledge the existence of more complex behavior without over
 
 This approach allows interested users to explore further without cluttering the main text.
 
-### Use Clear, Concise Language
+### Use clear, concise language
 
 Avoid jargon overload. Where technical terminology is necessary, provide definitions or tooltips that clarify their meaning. Techniques such as inline explanations or glossaries can be incredibly useful.
 
-## Case Study: Timer Throttling in Inactive Tabs
+## Case study: Timer throttling in inactive tabs
 
 To illustrate, consider the [MDN section](https://developer.mozilla.org/en-US/docs/Web/API/Window/setTimeout#:~:text=Timeouts%20in%20inactive%20tabs) on "Timeouts in inactive tabs." The current content highlights basic behaviors:
 
