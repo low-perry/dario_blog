@@ -95,6 +95,8 @@ color: rgb(250, 179, 135)
   <li>DSA</li>
   <li>C#</li>
   <li>SQL</li>
+  <li>Markdown</li>
+  <li>Technical Writing</li>
   <li>Git</li>
   <li>GitHub</li>
 </ul>
