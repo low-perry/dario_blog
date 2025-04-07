@@ -4,7 +4,7 @@ title:  "To Delve or Not to Delve: Strategies for balancing detail and clarity i
 author: Dario Haxhiraj
 date:   2025-04-07 15:11:33 +0100
 categories: technical writing documentation
-excerpt: "In technical documentation, striking the perfect balance between depth and clarity is key. Should you provide every nuance, or keep it simple and link out for deeper dives?"
+excerpt: "Technical documentation is all about balance—decide whether to dive into every nuance or keep things concise."
 permalink: /blog/:title
 ---
 
