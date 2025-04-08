@@ -2,7 +2,7 @@
 layout: blog-post
 title:  "Getting started with open source"
 author: Dario Haxhiraj
-date:   2025-04-08 14:31:33 +0100
+date: 2025-04-08 14:31:33 +0100
 categories: technical writing documentation
 excerpt: "Learn how to contribute to open source projects by finding issues, making changes, and submitting pull requests, with practical tips to get started."
 permalink: /blog/:title
