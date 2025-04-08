@@ -49,13 +49,16 @@ document.addEventListener("DOMContentLoaded", function() {
     });
 // Prevent space key from scrolling the page
 document.addEventListener('keydown', function(event) {
-    // Check if the key pressed is the space key (keyCode 32)
+    // Check if the key pressed is the space key
     if (event.code === 'Space') {
-      // Prevent the default action (scrolling)
-      event.preventDefault();
-      return false;
-    }
-  });
+        // Allow the space key to work in input or textarea elements
+        const activeElement = document.activeElement;
+        if (activeElement.tagName === 'INPUT' || activeElement.tagName === 'TEXTAREA') {
+            return; // Do not prevent default behavior
+        }
 
+        // Prevent default action (scrolling) for other elements
+        event.preventDefault();
+    }
 });
 
