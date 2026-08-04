@@ -3,6 +3,8 @@ layout: page
 title: Contact
 permalink: /contact/
 color: rgb(180, 190, 254)
+description: Talk code, writing, open source—or challenge me to a game of chess.
+social_image: /assets/images/social/pages/contact.png
 ---
 
 <div class="contact-logo">

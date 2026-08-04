@@ -12,23 +12,57 @@
     </script>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta property="og:title" content="{{ page.title | escape }}" />
+    {% assign meta_title = page.title | default: site.title %}
+    {% assign meta_description = page.description | default: page.excerpt | default: site.description %}
+    {% if page.layout == 'blog-post' %}
+      {% assign social_image = '/assets/images/social/posts/' | append: page.slug | append: '.png' %}
+      {% assign social_type = 'article' %}
+    {% else %}
+      {% assign social_image = page.social_image | default: '/assets/images/social/pages/home.png' %}
+      {% assign social_type = 'website' %}
+    {% endif %}
+
+    <title>{{ meta_title | escape }}</title>
+    <link rel="canonical" href="{{ page.url | absolute_url }}" />
     <meta
       name="description"
-      content="{{ page.description | default: site.description | escape }}"
+      content="{{ meta_description | strip_html | strip_newlines | escape }}"
     />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:site_name" content="{{ site.title | escape }}" />
+    <meta property="og:title" content="{{ meta_title | escape }}" />
     <meta
       property="og:description"
-      content="{{ page.description | default: site.description | escape }}"
+      content="{{ meta_description | strip_html | strip_newlines | escape }}"
     />
-    <meta property="og:type" content="article" />
+    <meta property="og:type" content="{{ social_type }}" />
+    <meta property="og:url" content="{{ page.url | absolute_url }}" />
+    <meta property="og:image" content="{{ social_image | absolute_url }}" />
+    <meta property="og:image:secure_url" content="{{ social_image | absolute_url }}" />
+    <meta property="og:image:type" content="image/png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Share card for {{ meta_title | escape }}" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="{{ meta_title | escape }}" />
+    <meta
+      name="twitter:description"
+      content="{{ meta_description | strip_html | strip_newlines | escape }}"
+    />
+    <meta name="twitter:image" content="{{ social_image | absolute_url }}" />
+    <meta name="twitter:image:alt" content="Share card for {{ meta_title | escape }}" />
+    {% if page.layout == 'blog-post' %}
+      <meta property="article:published_time" content="{{ page.date | date_to_xmlschema }}" />
+      <meta property="article:author" content="{{ page.author | default: site.author | escape }}" />
+      {% for category in page.categories %}
+        <meta property="article:tag" content="{{ category | escape }}" />
+      {% endfor %}
+    {% endif %}
     <meta
       name="keywords"
       content="{{ page.keywords | default : site.keywords | escape }}"
     />
     <meta name="author" content="{{site.author | escape}}" />
-    <meta property="og:url" content="{{ page.url | absolute_url }}" />
-    <title>{{ page.title }}</title>
     <link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}" />
     <link
       rel="stylesheet"

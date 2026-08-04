@@ -3,6 +3,8 @@ layout: page
 title: Me
 permalink: /me/
 color: rgb(250, 179, 135)
+description: A small tour through my work, interests and the universe behind this site.
+social_image: /assets/images/social/pages/me.png
 ---
 
 <div id="canvas-container" 

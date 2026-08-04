@@ -1,0 +1,11 @@
+{
+  "name": "dario-social-cards",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "generate": "node generate.mjs"
+  },
+  "devDependencies": {
+    "sharp": "^0.35.3"
+  }
+}
