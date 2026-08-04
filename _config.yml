@@ -31,6 +31,7 @@ keywords: "programmming, technology, javascript, css, html, java, c#, blog, jeky
 plugins:
   - jekyll-feed
   - jekyll-email-protect
+  - jekyll-sitemap
 
 # Markdown settings
 markdown: kramdown
@@ -38,7 +39,8 @@ highlighter: rouge
 kramdown:
   input: GFM
 
-
+exclude:
+  - scripts/
 
 # Exclude from processing.
 # The following items will not be processed, by default.
