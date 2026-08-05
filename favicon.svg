@@ -1,0 +1,5 @@
+---
+layout: null
+---
+{% capture nav_logo %}{% include svg_logo.html %}{% endcapture %}
+{{ nav_logo | replace: 'width="60"', 'width="64"' | replace: 'height="60"', 'height="64"' | replace: 'var(--logo-red)', '#f38ba8' | replace: 'var(--logo-blue)', '#89b4fa' | replace: 'var(--logo-yellow)', '#f9e2af' | replace: 'var(--logo-pink)', '#f5c2e7' | replace: 'var(--logo-lavender)', '#b4befe' }}
