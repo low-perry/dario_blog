@@ -3,6 +3,39 @@
     flex-wrap: wrap;
     gap: 20px;
 }
+
+.blog-page {
+    max-width: 1180px;
+}
+
+.blog-intro {
+    max-width: 720px;
+    margin: 3rem 0 4rem;
+    padding-left: 1.25rem;
+    border-left: 2px solid var(--nav-link-2-color);
+}
+
+.blog-intro-kicker {
+    margin: 0;
+    color: var(--nav-link-2-color);
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+}
+
+.blog-intro h1.page-title {
+    margin: 0.5rem 0 1rem;
+}
+
+.blog-intro-copy {
+    max-width: 640px;
+    margin: 0;
+    color: var(--subtext-color);
+    font-size: 1.15rem;
+    line-height: 1.65;
+}
+
 article img {
     max-width: 100%;
     height: auto;
@@ -164,6 +197,18 @@ article img {
 @media (max-width: 650px) {
     .post-card {
         width: 100%; /* 1 post per row on very small screens */
+    }
+
+    .blog-intro {
+        margin: 2rem 0 3rem;
+    }
+
+    .blog-intro h1.page-title {
+        font-size: 2rem;
+    }
+
+    .blog-intro-copy {
+        font-size: 1rem;
     }
     .post-page h1.page-title {
       font-size: 1.5rem; /* Smaller font size for h1 */

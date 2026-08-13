@@ -2,15 +2,16 @@
 layout: main
 ---
 
-<div style="height: 20px;"></div>
-{{ content }}
+<div class="blog-page page-container">
+    {{ content }}
 
-<div class="posts">
-    {% for post in site.posts %}
-        <article class="post-card">
-            <h2><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h2>
-            {%include reading-time.html post=post %}
-            <p class="post-excerpt">{{ post.excerpt }}</p>
-        </article>
-    {% endfor %}
+    <div class="posts">
+        {% for post in site.posts %}
+            <article class="post-card">
+                <h2><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h2>
+                {% include reading-time.html post=post %}
+                <p class="post-excerpt">{{ post.excerpt }}</p>
+            </article>
+        {% endfor %}
+    </div>
 </div>
