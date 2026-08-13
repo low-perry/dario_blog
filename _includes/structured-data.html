@@ -1,0 +1,102 @@
+{% assign schema_description = include.description | strip_html | strip_newlines %}
+{% assign schema_url = page.url | absolute_url %}
+{% assign schema_home_url = '/' | absolute_url %}
+{% assign schema_blog_url = '/blog/' | absolute_url %}
+{% assign schema_person_url = '/me/' | absolute_url %}
+{% assign schema_website_id = schema_home_url | append: '#website' %}
+{% assign schema_person_id = schema_person_url | append: '#person' %}
+{% assign schema_image = include.image | absolute_url %}
+{% assign schema_modified_date = page.last_modified_at | default: page.date %}
+<script type="application/ld+json">
+{% if page.layout == 'blog-post' %}
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": {{ page.title | jsonify }},
+  "description": {{ schema_description | jsonify }},
+  "url": {{ schema_url | jsonify }},
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": {{ schema_url | jsonify }}
+  },
+  "image": {
+    "@type": "ImageObject",
+    "url": {{ schema_image | jsonify }},
+    "width": 1200,
+    "height": 630
+  },
+  "datePublished": {{ page.date | date_to_xmlschema | jsonify }},
+  "dateModified": {{ schema_modified_date | date_to_xmlschema | jsonify }},
+  "author": {
+    "@type": "Person",
+    "@id": {{ schema_person_id | jsonify }},
+    "name": {{ site.author | jsonify }},
+    "url": {{ schema_person_url | jsonify }},
+    "sameAs": {{ site.social_links | jsonify }}
+  },
+  "publisher": {
+    "@type": "Person",
+    "@id": {{ schema_person_id | jsonify }},
+    "name": {{ site.author | jsonify }},
+    "url": {{ schema_person_url | jsonify }}
+  },
+  "isPartOf": {
+    "@type": "Blog",
+    "name": {{ site.title | jsonify }},
+    "url": {{ schema_blog_url | jsonify }}
+  },
+  "keywords": {{ page.categories | jsonify }},
+  "wordCount": {{ page.content | number_of_words }},
+  "inLanguage": "en"
+}
+{% elsif page.url == '/' %}
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebSite",
+      "@id": {{ schema_website_id | jsonify }},
+      "url": {{ schema_home_url | jsonify }},
+      "name": {{ site.title | jsonify }},
+      "alternateName": "Dario",
+      "description": {{ schema_description | jsonify }},
+      "inLanguage": "en",
+      "publisher": { "@id": {{ schema_person_id | jsonify }} }
+    },
+    {
+      "@type": "Person",
+      "@id": {{ schema_person_id | jsonify }},
+      "name": {{ site.author | jsonify }},
+      "url": {{ schema_person_url | jsonify }},
+      "sameAs": {{ site.social_links | jsonify }}
+    }
+  ]
+}
+{% elsif page.url == '/me/' %}
+{
+  "@context": "https://schema.org",
+  "@type": "ProfilePage",
+  "name": {{ page.title | jsonify }},
+  "description": {{ schema_description | jsonify }},
+  "url": {{ schema_url | jsonify }},
+  "isPartOf": { "@id": {{ schema_website_id | jsonify }} },
+  "mainEntity": {
+    "@type": "Person",
+    "@id": {{ schema_person_id | jsonify }},
+    "name": {{ site.author | jsonify }},
+    "url": {{ schema_person_url | jsonify }},
+    "sameAs": {{ site.social_links | jsonify }}
+  }
+}
+{% else %}
+{
+  "@context": "https://schema.org",
+  "@type": "{% if page.layout == 'blog' %}CollectionPage{% elsif page.url == '/contact/' %}ContactPage{% else %}WebPage{% endif %}",
+  "name": {{ page.title | default: site.title | jsonify }},
+  "description": {{ schema_description | jsonify }},
+  "url": {{ schema_url | jsonify }},
+  "isPartOf": { "@id": {{ schema_website_id | jsonify }} },
+  "inLanguage": "en"
+}
+{% endif %}
+</script>

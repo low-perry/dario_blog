@@ -18,13 +18,17 @@
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
 
-title: Dario
+title: "Dario's Blog"
 email: dariohaxhiraj@gmail.com
 description: This is Dario Haxhiraj's personal blog and portfolio website.
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://dariohaxhiraj.online" # the base hostname & protocol for your site, e.g. http://example.com
 github_username: low-perry
 author: Dario Haxhiraj
+social_links:
+  - https://github.com/low-perry
+  - https://mastodon.social/@lowperry
+  - https://www.chess.com/member/dar9794
 keywords: "programmming, technology, javascript, css, html, java, c#, blog, jekyll, dario, haxhiraj"
 
 # Build settings

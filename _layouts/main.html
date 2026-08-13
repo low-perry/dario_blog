@@ -22,8 +22,9 @@
       {% assign social_type = 'website' %}
     {% endif %}
 
-    <title>{{ meta_title | escape }}</title>
+    <title>{{ meta_title | escape }}{% if page.title and page.url != '/' %} | {{ site.title | escape }}{% endif %}</title>
     <link rel="canonical" href="{{ page.url | absolute_url }}" />
+    {% feed_meta %}
     <meta
       name="description"
       content="{{ meta_description | strip_html | strip_newlines | escape }}"
@@ -63,6 +64,7 @@
       content="{{ page.keywords | default : site.keywords | escape }}"
     />
     <meta name="author" content="{{site.author | escape}}" />
+    {% include structured-data.html description=meta_description image=social_image %}
     <link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}" />
     <link
       rel="stylesheet"

@@ -272,7 +272,7 @@ footer {
   align-items: center;
 }
 
-.hero-text p.hero-hello {
+.hero-text .hero-hello {
   background: linear-gradient(
     to right,
     var(--hero-gradient-1),
@@ -353,7 +353,7 @@ footer {
     text-align: left;
   }
 
-  .hero-text p.hero-hello {
+  .hero-text .hero-hello {
     font-size: 30px;
   }
 
