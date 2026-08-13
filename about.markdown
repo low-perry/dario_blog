@@ -14,6 +14,13 @@ social_image: /assets/images/social/pages/me.png
      data-astronaut-url="{{ '/assets/3DObjects/astropink.glb' | relative_url }}"
      data-astronaut-draco-url="{{ '/assets/3DObjects/astropink-draco.glb' | relative_url }}"
      data-astronaut-lowres-url="{{ '/assets/3DObjects/astropink-lowres-draco.glb' | relative_url }}">
+  <header class="me-intro">
+    <h1>AstroPink in the void</h1>
+    <p class="me-intro-hint">
+      <span class="me-intro-hint-desktop">Drag with your mouse to rotate · Scroll to zoom · Press Space to jump</span>
+      <span class="me-intro-hint-touch">Drag to rotate · Pinch to zoom · Tap to jump</span>
+    </p>
+  </header>
 </div>
 
 <div class="section-nav">
@@ -257,6 +264,50 @@ social_image: /assets/images/social/pages/me.png
 </script>
 
 <style>
+  #canvas-container {
+    position: relative;
+    overflow: hidden;
+    border-radius: 12px;
+    background-color: var(--crust-color);
+  }
+
+  #canvas-container canvas {
+    display: block;
+  }
+
+  .me-intro {
+    position: absolute;
+    z-index: 2;
+    top: clamp(2rem, 7vw, 5rem);
+    left: clamp(1.25rem, 5vw, 3.5rem);
+    width: min(430px, calc(100% - 2.5rem));
+    box-sizing: border-box;
+    padding: 1rem 1.25rem;
+    border-left: 2px solid var(--nav-link-1-color);
+    background: linear-gradient(90deg, rgba(17, 17, 27, 0.78), rgba(17, 17, 27, 0));
+    color: #cdd6f4;
+    pointer-events: none;
+    text-shadow: 0 1px 12px rgba(0, 0, 0, 0.65);
+  }
+
+  .me-intro h1 {
+    margin: 0;
+    color: #f5e0dc;
+    font-size: clamp(1.8rem, 4vw, 3rem);
+    line-height: 1;
+  }
+
+  .me-intro-hint {
+    margin: 1rem 0 0 !important;
+    color: #bac2de;
+    font-size: 0.72rem;
+    line-height: 1.55;
+  }
+
+  .me-intro-hint-touch {
+    display: none;
+  }
+
   .section-nav {
   display: flex;
   justify-content: center;
@@ -375,6 +426,29 @@ social_image: /assets/images/social/pages/me.png
 }
 
 @media (max-width: 768px) {
+  .me-intro {
+    top: 1.25rem;
+    left: 1rem;
+    width: calc(100% - 2rem);
+    padding: 0.85rem 1rem;
+  }
+
+  .me-intro h1 {
+    font-size: 2rem;
+  }
+
+  .me-intro-hint {
+    font-size: 0.68rem !important;
+  }
+
+  .me-intro-hint-desktop {
+    display: none;
+  }
+
+  .me-intro-hint-touch {
+    display: inline;
+  }
+
   .section-btn {
     padding: 0.5rem 1rem;
     font-size: 0.875rem; /* Smaller font size */
