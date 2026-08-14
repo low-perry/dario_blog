@@ -53,17 +53,22 @@
 
   toc.hidden = false;
 
-  let activeId = "";
+  let activeSignature = "";
   let scrollFrame;
 
-  function setActiveLink(id) {
-    if (id === activeId) return;
-    activeId = id;
+  function setActiveLinks(ids) {
+    const signature = ids.join("|");
+    if (signature === activeSignature) return;
+    activeSignature = signature;
+
+    const activeIds = new Set(ids);
+    const currentId = ids[0];
 
     links.forEach((link) => {
-      const isActive = link.dataset.tocTarget === id;
+      const isActive = activeIds.has(link.dataset.tocTarget);
       link.classList.toggle("is-active", isActive);
-      if (isActive) {
+
+      if (link.dataset.tocTarget === currentId) {
         link.setAttribute("aria-current", "location");
       } else {
         link.removeAttribute("aria-current");
@@ -71,26 +76,36 @@
     });
   }
 
-  function updateActiveSection() {
+  function updateVisibleSections() {
     scrollFrame = undefined;
-    const activationLine = Math.min(160, window.innerHeight * 0.25);
-    let currentHeading = headings[0];
+    const viewportTop = Math.min(100, window.innerHeight * 0.15);
+    const viewportBottom =
+      window.innerHeight - Math.min(72, window.innerHeight * 0.1);
+    const postBottom = postContent.getBoundingClientRect().bottom;
+    const visibleIds = [];
 
-    for (const heading of headings) {
-      if (heading.getBoundingClientRect().top > activationLine) break;
-      currentHeading = heading;
-    }
+    headings.forEach((heading, index) => {
+      const sectionTop = heading.getBoundingClientRect().top;
+      const nextHeading = headings[index + 1];
+      const sectionBottom = nextHeading
+        ? nextHeading.getBoundingClientRect().top
+        : postBottom;
 
-    setActiveLink(currentHeading.id);
+      if (sectionTop < viewportBottom && sectionBottom > viewportTop) {
+        visibleIds.push(heading.id);
+      }
+    });
+
+    setActiveLinks(visibleIds);
   }
 
   function scheduleActiveSectionUpdate() {
     if (scrollFrame) return;
-    scrollFrame = window.requestAnimationFrame(updateActiveSection);
+    scrollFrame = window.requestAnimationFrame(updateVisibleSections);
   }
 
   window.addEventListener("scroll", scheduleActiveSectionUpdate, { passive: true });
   window.addEventListener("resize", scheduleActiveSectionUpdate);
   window.addEventListener("hashchange", scheduleActiveSectionUpdate);
-  updateActiveSection();
+  updateVisibleSections();
 })();
